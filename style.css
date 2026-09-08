@@ -1,0 +1,158 @@
+/* Importação das fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@1,600&family=Syne:wght@800&display=swap');
+
+/* Variáveis de cores para facilitar mudanças globais */
+:root {
+  --bg-color: #F4F4F0;       /* Off-white quente */
+  --accent-color: #0000FF;   /* Azul Cobalto / Klein Blue */
+  --text-color: #050505;     /* Preto quase absoluto */
+  --font-title: 'Syne', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAVBAR FIXA NO TOPO */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* ESTILO DA HOME (HERO) */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.home-title {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 8vw, 7rem);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.home-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+/* BOTÕES ESTILO BRUTALISTA */
+.button-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-brutalist {
+  padding: 15px 30px;
+  border: 2px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0px var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.btn-brutalist:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-color: var(--accent-color);
+}
+
+/* REDES SOCIAIS */
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+/* CONTAINER DAS DEMAIS PÁGINAS */
+.page-container {
+  padding: 140px 40px 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}

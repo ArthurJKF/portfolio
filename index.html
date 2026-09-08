@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação para aceitar acentos em português -->
+    <meta charset="UTF-8">
+    <!-- Ajuste fundamental para renderizar corretamente no celular (Responsivo) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Ferreira | Home</title>
+    
+    <!-- Link para a biblioteca de Ícones PhosphorIcons via CDN (Sem instalar nada no PC) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Vincula nosso arquivo de estilos centralizado style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAV BAR SUPERIOR (Fixa em todas as páginas) -->
+    <nav class="navbar">
+        <!-- Onde se lê Arthur Ferreira, ao clicar ele redireciona para a própria Home -->
+        <a href="index.html" class="brand-logo">ARTHUR JACOMEL</a>
+        <ul class="nav-links">
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="colecao.html">Coleção Criativa</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTAINER DA HOME (Centralizado) -->
+    <main class="home-container">
+        
+        <!-- Seu Nome em Mega Letras Brutalistas -->
+        <h1 class="main-title">ARTHUR JACOMEL</h1>
+        
+        <!-- Sua Tagline em Itálico com a fonte elegante Playfair Display -->
+        <p class="tagline">Desenvolvimento de Software &bull; Negócios &bull; Arte</p>
+        
+        <!-- Seção de Ação (Conferir e os dois botões) -->
+        <section class="cta-section">
+            <span class="cta-label">Confira:</span>
+            <div class="buttons-group">
+                <!-- Botão 1: Direciona para o arquivo portfolio.html -->
+                <a href="portfolio.html" class="btn-brutal">Portfólio de Projetos</a>
+                <!-- Botão 2: Direciona para o arquivo colecao.html -->
+                <a href="colecao.html" class="btn-brutal">Coleção de Criações</a>
+            </div>
+        </section>
+
+        <!-- Redes Sociais no rodapé central da Home (Ícones puxados via PhosphorIcons) -->
+        <div class="social-links">
+            <!-- Link do seu LinkedIn (Troque o URL 'SEU-PERFIL' pelo seu link real) -->
+            <a href="https://linkedin.com/in/arthur-jacomel" target="_blank" aria-label="LinkedIn">
+                <i class="ph ph-linkedin-logo"></i>
+            </a>
+            <!-- Link do seu Instagram -->
+            <a href="https://instagram.com/arthur.jkf" target="_blank" aria-label="Instagram">
+                <i class="ph ph-instagram-logo"></i>
+            </a>
+            <!-- Link direto do seu WhatsApp (Substitua SEUNUMERO com DDD, ex: 5541999999999) -->
+            <a href="https://wa.me/41999114699" target="_blank" aria-label="WhatsApp">
+                <i class="ph ph-whatsapp-logo"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Importa nosso script Javascript simples no final da página -->
+    <script src="script.js"></script>
+</body>
+</html>

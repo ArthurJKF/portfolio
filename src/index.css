@@ -55,13 +55,15 @@ body {
     align-items: center;
     z-index: 1000;
     pointer-events: none; /* Permite clicar através da área transparente */
+    border-bottom: none;
+    box-shadow: none;
     
     /* REMOVIDO: mask-image e backdrop-filter diretos aqui foram movidos para o ::before */
     border-bottom: none;
     box-shadow: none;
 }
 
-/* Camada separada para o Blur + Gradiente (Evita o bug de cancelamento do WebKit) */
+/* Camada separada para o Blur + Gradiente*/
 .navbar::before {
     content: '';
     position: absolute;
@@ -77,22 +79,8 @@ body {
     );
 
     /* Desfoque do fundo isolado */
-    backdrop-filter: blur(20px) saturate(190%);
     -webkit-backdrop-filter: blur(20px) saturate(190%);
-
-    /* Fade progressivo suave aplicado APENAS na camada de fundo */
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.6) 60%,
-        rgba(0, 0, 0, 0) 100%
-    );
-    mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.6) 60%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    backdrop-filter: blur(20px) saturate(190%);
 }
 
 /* Garante a interatividade dos links */

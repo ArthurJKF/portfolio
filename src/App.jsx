@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import ShaderBg from './components/ShaderBg'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -7,7 +7,7 @@ import Portfolio from './pages/Portfolio'
 
 export default function App() {
   return (
-    <Router>
+    <>
       <ShaderBg />
       <Navbar />
       
@@ -17,6 +17,6 @@ export default function App() {
       </Routes>
 
       <Footer />
-    </Router>
+    </>
   )
 }

@@ -49,13 +49,26 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 16px 40px 48px 40px; /* Padding inferior estendido para suavizar o fade */
+    padding: 16px 40px 48px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    pointer-events: none; /* Permite clicar através da área transparente */
+    
+    /* REMOVIDO: mask-image e backdrop-filter diretos aqui foram movidos para o ::before */
+    border-bottom: none;
+    box-shadow: none;
+}
 
-    /* Base Liquid Glass em gradiente vertical */
+/* Camada separada para o Blur + Gradiente (Evita o bug de cancelamento do WebKit) */
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    /* Base Liquid Glass */
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.12) 0%,
@@ -63,11 +76,11 @@ body {
         rgba(0, 10, 26, 0) 100%
     );
 
-    /* Desfoque do fundo e saturação das cores 3D */
+    /* Desfoque do fundo isolado */
     backdrop-filter: blur(20px) saturate(190%);
     -webkit-backdrop-filter: blur(20px) saturate(190%);
 
-    /* Fade progressivo que dissolve a navbar inteira (fundo e desfoque) na página */
+    /* Fade progressivo suave aplicado APENAS na camada de fundo */
     -webkit-mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 1) 0%,
@@ -80,10 +93,6 @@ body {
         rgba(0, 0, 0, 0.6) 60%,
         rgba(0, 0, 0, 0) 100%
     );
-
-    border-bottom: none;
-    box-shadow: none;
-    pointer-events: none; /* Permite clicar através da área transparente */
 }
 
 /* Garante a interatividade dos links */

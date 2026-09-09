@@ -54,21 +54,17 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    pointer-events: none; /* Permite clicar através da área transparente */
-    border-bottom: none;
-    box-shadow: none;
-    
-    /* REMOVIDO: mask-image e backdrop-filter diretos aqui foram movidos para o ::before */
+    pointer-events: none;
     border-bottom: none;
     box-shadow: none;
 }
 
-/* Camada separada para o Blur + Gradiente*/
+/* Camada separada para o Blur + Gradiente + Máscara */
 .navbar::before {
     content: '';
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0; /* Modificado de -1 para 0 para não sumir */
 
     /* Base Liquid Glass */
     background: linear-gradient(
@@ -78,13 +74,19 @@ body {
         rgba(0, 10, 26, 0) 100%
     );
 
-    /* Desfoque do fundo isolado */
+    /* Desfoque do fundo */
     -webkit-backdrop-filter: blur(20px) saturate(190%);
     backdrop-filter: blur(20px) saturate(190%);
+
+    /* Fade progressivo na borda inferior */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
 }
 
-/* Garante a interatividade dos links */
+/* Garante a interatividade e sobreposição dos links */
 .navbar .nav-links {
+    position: relative;
+    z-index: 1; /* Garante que os links fiquem ACIMA do fundo ::before */
     pointer-events: auto;
 }
 

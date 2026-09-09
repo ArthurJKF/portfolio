@@ -1,179 +1,453 @@
 /* ==========================================================================
-   1. IMPORTAÇÃO DE FONTES (Google Fonts)
-   Importamos Syne (títulos), Playfair Display (itálicos) e Inter (corpo)
+   1. IMPORTAÇÃO DE FONTES & VARIÁVEIS GLOBAIS
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@1,600&family=Syne:wght@700;800&display=swap');
 
-/* ==========================================================================
-   2. VARIÁVEIS GLOBAIS (Sua Paleta de Cores)
-   Altere aqui para mudar a cor do site inteiro instantaneamente
-   ========================================================================== */
 :root {
-    --bg-offwhite: #F4F4F0;    /* Fundo quente brutalista */
-    --blue-cobalt: #0000FF;    /* Azul elétrico vibrante */
-    --text-black: #050505;     /* Preto puro para contraste duro */
-    --font-title: 'Syne', sans-serif;           /* Fonte gorda para mega títulos */
-    --font-serif: 'Playfair Display', serif;   /* Fonte chique para destaques */
-    --font-body: 'Inter', sans-serif;           /* Fonte limpa estilo Apple para leitura */
+    /* Cores do Novo Tema */
+    --blue-cobalt: #005ec9;       /* Azul base */
+    --blue-dark: #003a80;         /* Tom escuro para profundidade do gradiente */
+    --blue-bright: #0072f0;       /* Tom claro para brilho do gradiente */
+    --bg-offwhite: #f4f4f0;       /* Branco suave/creme */
+    --text-black: #050505;        /* Preto puro brutalista */
+
+    /* Fontes do Sistema */
+    --font-title: 'Syne', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
 /* ==========================================================================
-   3. RESET BÁSICO
-   Remove margens padrão dos navegadores para trabalharmos com precisão
+   2. RESET GERAL & FUNDO DINÂMICO TEXTURIZADO
    ========================================================================== */
 * {
-    margin: 0;                   /* Zera as margens padrão do navegador */
-    padding: 0;                  /* Zera os espaçamentos internos padrão */
-    box-sizing: border-box;       /* Garante que larguras e alturas considerem as bordas */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-offwhite); /* Aplica o fundo off-white */
-    color: var(--text-black);             /* Aplica o texto preto por padrão */
-    font-family: var(--font-body);        /* Define a fonte Inter como padrão do texto */
-    line-height: 1.6;                     /* Espaçamento confortável entre linhas */
-    overflow-x: hidden;                  /* Impede rolagem horizontal indesejada */
+    /* Base de texto off-white para contraste com o fundo azul */
+    color: var(--bg-offwhite);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    /* Fundo Azul Texturizado (Micro-pontos) + Gradiente Animação */
+    background-color: var(--blue-cobalt);
+    background-image: 
+        radial-gradient(rgba(244, 244, 240, 0.15) 1px, transparent 1px),
+        linear-gradient(135deg, var(--blue-dark), var(--blue-cobalt), var(--blue-bright));
+    background-size: 20px 20px, 200% 200%;
+    animation: dynamicBg 12s ease infinite;
+}
+
+/* Movimento suave do fundo dinâmico */
+@keyframes dynamicBg {
+    0% { background-position: 0 0, 0% 50%; }
+    50% { background-position: 0 0, 100% 50%; }
+    100% { background-position: 0 0, 0% 50%; }
 }
 
 /* ==========================================================================
-   4. NAVBAR FIXA NO TOPO
-   Menu limpo que aparece em todas as páginas
+   3. BARRA DE NAVEGAÇÃO (FIXA)
    ========================================================================== */
 .navbar {
-    position: fixed;              /* Trava o menu no topo da tela durante a rolagem */
-    top: 0;                       /* Encosta no topo da página */
-    left: 0;                      /* Encosta na esquerda */
-    width: 100%;                  /* Ocupa toda a largura da tela */
-    padding: 20px 40px;           /* Espaçamento interno: 20px em cima/baixo, 40px dos lados */
-    display: flex;                /* Alinha a marca e os links na mesma linha */
-    justify-content: space-between;/* Joga o nome para a esquerda e o menu para a direita */
-    align-items: center;          /* Centraliza verticalmente todos os itens da barra */
-    background-color: var(--bg-offwhite); /* Garante que o fundo cubra os elementos atrás */
-    border-bottom: 2px solid var(--text-black); /* Linha preta dura e brutalista separando o menu */
-    z-index: 1000;                /* Mantém o menu acima de todos os outros elementos */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 58, 128, 0.85); /* Azul semitransparente com desfoque */
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--bg-offwhite);
+    z-index: 1000;
 }
 
 .brand-logo {
-    font-family: var(--font-title); /* Fonte gorda no nome do topo */
-    font-size: 1.2rem;            /* Tamanho levemente destacado */
-    text-decoration: none;        /* Remove o sublinhado azul padrão de links */
-    color: var(--text-black);     /* Cor do texto em preto */
-    font-weight: 800;             /* Peso máximo da fonte */
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--bg-offwhite);
+    font-weight: 800;
 }
 
-/* Container que segura as opções de menu na barra superior */
 .nav-links {
-    display: flex;                /* Coloca as opções lado a lado */
-    gap: 30px;                    /* Espaço de 30px entre cada item do menu */
-    list-style: none;             /* Remove os marcadores de bolinha de lista HTML */
+    display: flex;
+    gap: 30px;
+    list-style: none;
 }
 
-/* Estilo individual de cada link da barra superior */
 .nav-links a {
-    text-decoration: none;        /* Tiramos o sublinhado do link */
-    color: var(--text-black);     /* Cor do texto */
-    font-weight: 600;             /* Deixamos o texto em negrito leve */
-    font-size: 0.95rem;           /* Tamanho de leitura refinado */
-    text-transform: uppercase;    /* Força todas as letras a ficarem MAIÚSCULAS */
-    letter-spacing: 1px;          /* Afasta levemente as letras uma das outras */
-    transition: color 0.2s ease;  /* Anima a transição da cor suavemente ao passar o mouse */
+    text-decoration: none;
+    color: var(--bg-offwhite);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.2s ease;
 }
 
-/* Efeito ao passar o mouse nos itens da barra superior */
 .nav-links a:hover {
-    color: var(--blue-cobalt);    /* Muda a cor do link para Azul Cobalto ao passar o mouse */
+    opacity: 0.75;
 }
 
 /* ==========================================================================
-   5. HOME (LAYOUT CENTRALIZADO)
+   4. HOME / HERO SECTION
    ========================================================================== */
 .home-container {
-    min-height: 100vh;            /* Garante que o container ocupe 100% da altura da tela */
-    display: flex;                /* Ativa o Flexbox para alinhamentos */
-    flex-direction: column;       /* Organiza os elementos em coluna (um embaixo do outro) */
-    justify-content: center;      /* Centraliza tudo verticalmente na tela */
-    align-items: center;          /* Centraliza tudo horizontalmente na tela */
-    padding: 100px 20px 40px;     /* Previne que o conteúdo cole na navbar */
-    text-align: center;           /* Alinha todos os textos no centro */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 40px;
+    text-align: center;
 }
 
 .main-title {
-    font-family: var(--font-title); /* Aplica a fonte gorda Syne */
-    font-size: clamp(3rem, 8vw, 6.5rem); /* Fonte responsiva: encolhe no celular, cresce no PC */
-    font-weight: 800;             /* Peso máximo da fonte */
-    text-transform: uppercase;    /* Texto totalmente em maiúsculas */
-    line-height: 0.9;             /* Junta mais as linhas para dar impacto brutalista */
-    margin-bottom: 20px;          /* Espaço até o próximo elemento */
+    font-family: var(--font-title);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 20px;
 }
 
 .tagline {
-    font-family: var(--font-serif); /* Aplica a fonte chique Playfair Display */
-    font-style: italic;           /* Aplica o itálico elegante */
-    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Redimensionamento suave responsivo */
-    margin-bottom: 40px;          /* Distância até a seção de botões */
-    color: var(--text-black);     /* Cor preta */
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 40px;
 }
 
 .cta-section {
-    display: flex;                /* Flexbox para os botões */
-    flex-direction: column;       /* Organiza o texto e os botões verticalmente */
-    align-items: center;          /* Centraliza os botões */
-    gap: 15px;                    /* Espaço entre a legenda e os botões */
-    margin-bottom: 40px;          /* Distância até os ícones das redes sociais */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
 .cta-label {
-    font-size: 0.9rem;            /* Texto menor */
-    text-transform: uppercase;    /* Letras maiúsculas */
-    letter-spacing: 2px;          /* Letras bem afastadas */
-    font-weight: 600;             /* Negrito do rótulo */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .buttons-group {
-    display: flex;                /* Coloca os dois botões principais lado a lado */
-    gap: 20px;                    /* Espaço de 20px entre os dois botões */
-    flex-wrap: wrap;              /* Se a tela for pequena (celular), quebra os botões para baixo */
-    justify-content: center;      /* Centraliza a quebra de linha no celular */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Estilo dos Botões Principais Brutalistas */
+/* ==========================================================================
+   5. BOTÕES BRUTALISTAS (PADRÃO NO FUNDO AZUL)
+   ========================================================================== */
 .btn-brutal {
-    display: inline-block;        /* Garante estrutura de bloco para aceitar dimensões e cliques */
-    padding: 18px 32px;           /* Espaçamento interno confortável para clicar */
-    background-color: transparent;/* Fundo sem cor */
-    color: var(--text-black);     /* Cor do texto em preto */
-    border: 2px solid var(--text-black); /* Borda preta grossa e brutalista */
-    text-decoration: none;        /* Sem sublinhado */
-    font-family: var(--font-body);/* Fonte Inter limpa */
-    font-weight: 600;             /* Peso de negrito */
-    font-size: 0.95rem;           /* Tamanho agradável do texto do botão */
-    text-transform: uppercase;    /* Texto em maiúsculas */
-    letter-spacing: 1px;          /* Afastamento de letras */
-    transition: all 0.2s ease;    /* Transição suave de todas as propriedades no hover */
-    cursor: pointer;              /* Transforma o cursor na mãozinha ao passar por cima */
+    display: inline-block;
+    padding: 16px 30px;
+    background-color: transparent;
+    color: var(--bg-offwhite);
+    border: 2px solid var(--bg-offwhite);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-/* Efeito ao passar o mouse por cima dos botões (Hover) */
 .btn-brutal:hover {
-    background-color: var(--blue-cobalt); /* Fundo preenche totalmente de Azul Cobalto */
-    color: var(--bg-offwhite);            /* Texto muda para off-white para dar alto contraste */
-    border-color: var(--blue-cobalt);     /* A borda assume a cor do azul cobalto */
-    transform: translateY(-3px);          /* Levanta o botão suavemente 3 pixels para cima */
+    background-color: var(--bg-offwhite);
+    color: var(--blue-cobalt);
+    transform: translateY(-3px);
 }
 
-/* Ícones das Redes Sociais no Rodapé da Home */
-.social-links {
-    display: flex;                /* Ícones alinhados em linha */
-    gap: 25px;                    /* Espaço entre cada ícone */
+/* ==========================================================================
+   6. CARDS, GRIDS E CONTAINER DE PÁGINAS
+   ========================================================================== */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
 }
 
-.social-links a {
-    color: var(--text-black);     /* Cor inicial do ícone preta */
-    font-size: 1.8rem;            /* Tamanho generoso para fácil clique */
-    transition: color 0.2s ease, transform 0.2s ease; /* Transições suaves de cor e pulo */
+.page-header {
+    margin-bottom: 60px;
+    border-bottom: 2px solid var(--bg-offwhite);
+    padding-bottom: 20px;
 }
 
-.social-links a:hover {
-    color: var(--blue-cobalt);    /* Ícone fica Azul Cobalto no hover */
-    transform: scale(1.15);       /* Aumenta o tamanho do ícone levemente no hover */
+.page-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.section-block {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Grid e Estrutura dos Cards */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-brutal, 
+.list-item-brutal {
+    border: 2px solid var(--bg-offwhite);
+    padding: 30px;
+    background-color: rgba(0, 58, 128, 0.4); /* Fundo sutil para destacar do body */
+    backdrop-filter: blur(4px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-brutal:hover, 
+.list-item-brutal:hover {
+    transform: translateY(-5px);
+    border-color: #ffffff;
+}
+
+.card-subtitle, 
+.item-institution {
+    display: block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(244, 244, 240, 0.2);
+    padding-bottom: 8px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+}
+
+.card-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bg-offwhite);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card-status {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--bg-offwhite);
+    color: var(--blue-cobalt);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   7. LINHA DO TEMPO (TIMELINE)
+   ========================================================================== */
+.timeline-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--bg-offwhite);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    position: relative;
+    margin-bottom: 60px;
+    width: 50%;
+}
+
+.timeline-item.right {
+    left: 50%;
+    justify-content: flex-start;
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+/* Bolinha centralizada da linha do tempo */
+.timeline-dot {
+    position: absolute;
+    right: -8px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--bg-offwhite);
+    border: 2px solid var(--blue-cobalt);
+}
+
+.timeline-item.right .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    border: 2px solid var(--bg-offwhite);
+    padding: 25px;
+    background-color: rgba(0, 58, 128, 0.4);
+    width: 100%;
+}
+
+.timeline-date {
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    display: block;
+}
+
+.timeline-location {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* ==========================================================================
+   8. CLASSE ESPECIAL: BLOCOS E CARDS BRANCOS INVERTIDOS (.bg-branco)
+   Aplica fundo branco, texto preto e detalhes em azul cobalto.
+   ========================================================================== */
+.bg-branco {
+    background-color: var(--bg-offwhite) !important;
+    color: var(--text-black) !important;
+    border: 3px solid var(--text-black) !important;
+}
+
+.bg-branco h1, 
+.bg-branco h2, 
+.bg-branco h3, 
+.bg-branco p, 
+.bg-branco span,
+.bg-branco a:not(.btn-brutal) {
+    color: var(--text-black) !important;
+}
+
+.bg-branco .card-subtitle,
+.bg-branco .item-institution {
+    border-bottom-color: rgba(5, 5, 5, 0.2) !important;
+}
+
+.bg-branco .card-status,
+.bg-branco .timeline-dot {
+    background-color: var(--blue-cobalt) !important;
+    color: var(--bg-offwhite) !important;
+    border-color: var(--text-black) !important;
+}
+
+.bg-branco .btn-brutal {
+    border-color: var(--text-black) !important;
+    color: var(--text-black) !important;
+}
+
+.bg-branco .btn-brutal:hover {
+    background-color: var(--blue-cobalt) !important;
+    color: var(--bg-offwhite) !important;
+    border-color: var(--blue-cobalt) !important;
+}
+
+/* ==========================================================================
+   9. REDES SOCIAIS & RODAPÉ GLOBAL
+   ========================================================================== */
+.social-links, 
+.footer-social {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a, 
+.footer-social a {
+    color: var(--bg-offwhite);
+    font-size: 1.8rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-links a:hover, 
+.footer-social a:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.global-footer {
+    border-top: 2px solid var(--bg-offwhite);
+    padding: 30px 40px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .timeline-item, 
+    .timeline-item.right {
+        width: 100%;
+        left: 0;
+        padding-left: 45px;
+        padding-right: 0;
+    }
+    
+    .timeline-dot, 
+    .timeline-item.right .timeline-dot {
+        left: 12px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }

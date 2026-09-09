@@ -1,0 +1,591 @@
+/* ==========================================================================
+   1. IMPORTAÇÃO DE FONTES & VARIÁVEIS GLOBAIS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@1,600&family=Syne:wght@700;800&display=swap');
+
+:root {
+    /* Cores do Novo Tema */
+    --blue-cobalt: #005ec9;       /* Azul base */
+    --blue-dark: #003a80;         /* Tom escuro para profundidade do gradiente */
+    --blue-bright: #0072f0;       /* Tom claro para brilho do gradiente */
+    --bg-offwhite: #f4f4f0;       /* Branco suave/creme */
+    --text-black: #050505;        /* Preto puro brutalista */
+
+    /* Fontes do Sistema */
+    --font-title: 'Syne', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   2. RESET GERAL & FUNDO DINÂMICO TEXTURIZADO
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: transparent;
+    color: var(--bg-offwhite);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Movimento suave do fundo dinâmico */
+@keyframes dynamicBg {
+    0% { background-position: 0 0, 0% 50%; }
+    50% { background-position: 0 0, 100% 50%; }
+    100% { background-position: 0 0, 0% 50%; }
+}
+
+/* ==========================================================================
+   NAVBAR - LIQUID GLASS & TYPOGRAPHY
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 40px 48px 40px; /* Padding inferior estendido para suavizar o fade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    /* Base Liquid Glass em gradiente vertical */
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(0, 10, 26, 0) 100%
+    );
+
+    /* Desfoque do fundo e saturação das cores 3D */
+    backdrop-filter: blur(20px) saturate(190%);
+    -webkit-backdrop-filter: blur(20px) saturate(190%);
+
+    /* Fade progressivo que dissolve a navbar inteira (fundo e desfoque) na página */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    border-bottom: none;
+    box-shadow: none;
+    pointer-events: none; /* Permite clicar através da área transparente */
+}
+
+/* Garante a interatividade dos links */
+.navbar .nav-links {
+    pointer-events: auto;
+}
+
+/* ==========================================================================
+   NAVBAR LINKS & HOVER STATES
+   ========================================================================== */
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Normal (Inativo) */
+.nav-links a {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover nos links inativos: elimina o fundo cinza escuro, trazendo luz e reflexo */
+.nav-links a:hover {
+    color: #ffffff;
+    background: rgba(140, 165, 247, 0.12);
+    border-color: rgba(236, 242, 255, 0.35);
+    box-shadow: 0 0 15px rgba(232, 239, 248, 0.15);
+    text-shadow: 0 0 8px rgba(243, 248, 255, 0.6);
+}
+
+/* Página Ativa */
+.nav-links a.active {
+    color: #a0c1ff;
+    background: rgba(0, 68, 255, 0.15);
+    border: 1px solid rgba(160, 193, 255, 0.35);
+    box-shadow: inset 0 0 12px rgba(0, 81, 255, 0.2);
+    text-shadow: 0 0 8px rgba(160, 193, 255, 0.5);
+}
+
+/* Reação ao passar o mouse na PÁGINA ATIVA */
+.nav-links a.active:hover {
+    color: #ffffff;
+    background: rgba(0, 81, 255, 0.3);
+    border-color: rgba(160, 193, 255, 0.75);
+    box-shadow: 
+        inset 0 0 16px rgba(0, 102, 255, 0.4),
+        0 0 20px rgba(0, 102, 255, 0.35);
+    text-shadow: 0 0 12px #ffffff;
+}
+
+/* ==========================================================================
+   4. HOME / HERO SECTION
+   ========================================================================== */
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 40px;
+    text-align: center;
+}
+
+.main-title {
+    font-family: var(--font-title);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 40px;
+}
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.cta-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.buttons-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   BOTÕES DA HOME (.btn-brutal) - TECHNICAL LIQUID GLASS
+   ========================================================================== */
+.buttons-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-brutal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+
+    /* Base Liquid Glass translúcida */
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+
+    /* Moldura técnica de 2px */
+    border: 1px solid rgba(236, 242, 255, 0.2);
+    border-radius: 2px;
+
+    /* Transição focada estritamente em iluminação e cor (sem transform/pop) */
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, text-shadow 0.25s ease;
+}
+
+.btn-brutal:hover {
+    color: #ffffff;
+
+    /* Fundo azul cobalto translúcido e vítreo */
+    background: rgba(0, 68, 255, 0.22);
+    backdrop-filter: blur(18px) saturate(200%);
+    -webkit-backdrop-filter: blur(18px) saturate(200%);
+
+    /* Borda acesa em tom azul-claro + emissão de luz suave */
+    border-color: rgba(160, 193, 255, 0.65);
+    box-shadow: 
+        0 0 25px rgba(0, 81, 255, 0.35),
+        inset 0 0 12px rgba(160, 193, 255, 0.2);
+
+    /* Glow no texto idêntico ao da Navbar */
+    text-shadow: 0 0 10px rgba(160, 193, 255, 0.8);
+}
+
+.btn-brutal:active {
+    background: rgba(0, 68, 255, 0.35);
+    border-color: rgba(160, 193, 255, 0.85);
+    box-shadow: inset 0 0 16px rgba(0, 102, 255, 0.4);
+}
+
+/* ==========================================================================
+   6. CARDS, GRIDS E CONTAINER DE PÁGINAS
+   ========================================================================== */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+}
+
+.page-header {
+    margin-bottom: 60px;
+    border-bottom: 2px solid var(--bg-offwhite);
+    padding-bottom: 20px;
+}
+
+.page-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.section-block {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Grid e Estrutura dos Cards */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-brutal, 
+.list-item-brutal {
+    border: 2px solid var(--bg-offwhite);
+    padding: 30px;
+    background-color: rgba(0, 58, 128, 0.4); /* Fundo sutil para destacar do body */
+    backdrop-filter: blur(4px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-brutal:hover, 
+.list-item-brutal:hover {
+    transform: translateY(-5px);
+    border-color: #ffffff;
+}
+
+.card-subtitle, 
+.item-institution {
+    display: block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(244, 244, 240, 0.2);
+    padding-bottom: 8px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+}
+
+.card-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bg-offwhite);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card-status {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--bg-offwhite);
+    color: var(--blue-cobalt);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   7. LINHA DO TEMPO (TIMELINE)
+   ========================================================================== */
+.timeline-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--bg-offwhite);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    position: relative;
+    margin-bottom: 60px;
+    width: 50%;
+}
+
+.timeline-item.right {
+    left: 50%;
+    justify-content: flex-start;
+    padding-left: 40px;
+    padding-right: 0;
+}
+
+/* Bolinha centralizada da linha do tempo */
+.timeline-dot {
+    position: absolute;
+    right: -8px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--bg-offwhite);
+    border: 2px solid var(--blue-cobalt);
+}
+
+.timeline-item.right .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    border: 2px solid var(--bg-offwhite);
+    padding: 25px;
+    background-color: rgba(0, 58, 128, 0.4);
+    width: 100%;
+}
+
+.timeline-date {
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    display: block;
+}
+
+.timeline-location {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* ==========================================================================
+   8. CLASSE ESPECIAL: BLOCOS E CARDS BRANCOS INVERTIDOS (.bg-branco)
+   Aplica fundo branco, texto preto e detalhes em azul cobalto.
+   ========================================================================== */
+.bg-branco {
+    background-color: var(--bg-offwhite) !important;
+    color: var(--text-black) !important;
+    border: 3px solid var(--text-black) !important;
+}
+
+.bg-branco h1, 
+.bg-branco h2, 
+.bg-branco h3, 
+.bg-branco p, 
+.bg-branco span,
+.bg-branco a:not(.btn-brutal) {
+    color: var(--text-black) !important;
+}
+
+.bg-branco .card-subtitle,
+.bg-branco .item-institution {
+    border-bottom-color: rgba(5, 5, 5, 0.2) !important;
+}
+
+.bg-branco .card-status,
+.bg-branco .timeline-dot {
+    background-color: var(--blue-cobalt) !important;
+    color: var(--bg-offwhite) !important;
+    border-color: var(--text-black) !important;
+}
+
+.bg-branco .btn-brutal {
+    border-color: var(--text-black) !important;
+    color: var(--text-black) !important;
+}
+
+.bg-branco .btn-brutal:hover {
+    background-color: var(--blue-cobalt) !important;
+    color: var(--bg-offwhite) !important;
+    border-color: var(--blue-cobalt) !important;
+}
+
+/* ==========================================================================
+   9. REDES SOCIAIS & RODAPÉ GLOBAL
+   ========================================================================== */
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--bg-offwhite);
+    font-size: 1.8rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.global-footer {
+    border-top: 1px solid rgba(244, 244, 240, 0.2);
+    padding: 20px 40px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: var(--bg-offwhite);
+    font-size: 1.3rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.footer-social svg {
+    display: block;
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .timeline-item, 
+    .timeline-item.right {
+        width: 100%;
+        left: 0;
+        padding-left: 45px;
+        padding-right: 0;
+    }
+    
+    .timeline-dot, 
+    .timeline-item.right .timeline-dot {
+        left: 12px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   TRANSIÇÃO EM CASCATA & DISTORÇÃO LIQUID
+   ========================================================================== */
+@keyframes liquidCascade {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.97);
+        filter: blur(16px);
+    }
+    50% {
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Aplica o efeito em qualquer elemento filho sequencialmente */
+.animate-cascade > * {
+    opacity: 0;
+    animation: liquidCascade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 0.08s); /* O tempo de espera depende do índice --i */
+    will-change: transform, opacity, filter;
+}

@@ -49,7 +49,7 @@ export default function ShaderBg() {
         uAmplitude={0}
         uDensity={1.5}
         uFrequency={0}
-        uSpeed={0.11}
+        uSpeed={0.05}
         uStrength={1.5}
         uTime={8}
         wireframe={false}

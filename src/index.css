@@ -49,7 +49,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 16px 40px 48px 40px;
+    padding: 14px 40px 40px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,12 +75,12 @@ body {
     );
 
     /* Desfoque do fundo */
-    -webkit-backdrop-filter: blur(20px) saturate(190%);
-    backdrop-filter: blur(20px) saturate(190%);
+    -webkit-backdrop-filter: blur(15px) saturate(120%);
+    backdrop-filter: blur(15px) saturate(120%);
 
     /* Fade progressivo na borda inferior */
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 
 /* Garante a interatividade e sobreposição dos links */
@@ -149,12 +149,12 @@ body {
    4. HOME / HERO SECTION
    ========================================================================== */
 .home-container {
-    min-height: 100vh;
+    min-height: calc(100vh - 180px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px 40px;
+    padding: 80px 20px 0px;
     text-align: center;
 }
 
@@ -302,17 +302,31 @@ body {
 
 .card-brutal, 
 .list-item-brutal {
-    border: 2px solid var(--bg-offwhite);
     padding: 30px;
-    background-color: rgba(0, 58, 128, 0.4); /* Fundo sutil para destacar do body */
-    backdrop-filter: blur(4px);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    
+    /* Base Liquid Glass translúcida (igual aos botões) */
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    
+    /* Moldura técnica fina */
+    border: 1px solid rgba(236, 242, 255, 0.2);
+    border-radius: 4px;
+    
+    /* Transição focada estritamente em iluminação (sem o pulo do transform) */
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-brutal:hover, 
 .list-item-brutal:hover {
-    transform: translateY(-5px);
-    border-color: #ffffff;
+    /* Fundo azul vítreo ao passar o mouse */
+    background: rgba(0, 68, 255, 0.15);
+    
+    /* Borda acesa em tom azul-claro + emissão de luz suave */
+    border-color: rgba(160, 193, 255, 0.5);
+    box-shadow: 
+        0 0 30px rgba(0, 81, 255, 0.2),
+        inset 0 0 15px rgba(160, 193, 255, 0.1);
 }
 
 .card-subtitle, 
@@ -348,6 +362,181 @@ body {
 }
 
 /* ==========================================================================
+   ESTRUTURA DE PROJETOS (WIDE & HALF GRIDS)
+   ========================================================================== */
+
+/* Card Gigante (Agro) */
+.project-wide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.project-wide-card .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* Lista de Tecnologias Horizontal */
+.tech-stack-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.tech-stack-inline li {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border: 1px solid rgba(244, 244, 240, 0.3);
+    border-radius: 2px;
+    color: var(--bg-offwhite);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Grid para os projetos menores (Recipie e Oráculo) */
+.projects-grid-half {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.project-half-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ==========================================================================
+   MOCKS VISUAIS (SUBSTITUTOS DE IMAGENS)
+   ========================================================================== */
+
+/* Falso Terminal (Projeto Agro) */
+.project-architecture-mock {
+    background-color: #050505;
+    border: 1px solid rgba(244, 244, 240, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mock-header {
+    background-color: #111;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(244, 244, 240, 0.1);
+}
+
+.mock-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.mock-dot.red { background-color: #ff5f56; }
+.mock-dot.yellow { background-color: #ffbd2e; }
+.mock-dot.green { background-color: #27c93f; }
+
+.mock-title {
+    margin-left: 10px;
+    font-size: 0.75rem;
+    font-family: var(--font-body);
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.architecture-rules {
+    padding: 20px;
+    list-style: none;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #a0c1ff;
+    line-height: 1.8;
+}
+
+.architecture-rules li { margin-bottom: 12px; }
+.rule-key { color: #fff; font-weight: bold; }
+.workflow-state { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; }
+.rule-error { color: #ff5f56 !important; }
+
+/* Placeholders para Recipie e Oráculo */
+.project-visual-placeholder {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px dashed rgba(244, 244, 240, 0.3);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    position: relative;
+}
+
+.placeholder-caption {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+/* Wireframe Mobile (Recipie) */
+.wireframe-mobile {
+    width: 80px;
+    height: 140px;
+    border: 2px solid rgba(244, 244, 240, 0.5);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.wf-header { height: 10px; background: rgba(244, 244, 240, 0.2); border-radius: 2px; }
+.wf-image { height: 60px; background: rgba(244, 244, 240, 0.1); border-radius: 2px; }
+.wf-lines span { display: block; height: 4px; background: rgba(244, 244, 240, 0.2); margin-bottom: 4px; width: 100%; }
+.wf-lines span:last-child { width: 60%; }
+
+/* Código Terminal (Oráculo) */
+.code-style code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #ffe603;
+    display: block;
+    width: 100%;
+    line-height: 1.6;
+}
+
+/* Responsividade do Grid */
+@media (max-width: 900px) {
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
    7. LINHA DO TEMPO (TIMELINE)
    ========================================================================== */
 .timeline-container {
@@ -355,13 +544,14 @@ body {
     padding: 40px 0;
 }
 
+/* Linha central com transparência técnica */
 .timeline-line {
     position: absolute;
     left: 50%;
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: var(--bg-offwhite);
+    background: rgba(236, 242, 255, 0.15); /* Antes era branco sólido */
     transform: translateX(-50%);
 }
 
@@ -381,7 +571,7 @@ body {
     padding-right: 0;
 }
 
-/* Bolinha centralizada da linha do tempo */
+/* Bolinhas da linha do tempo: Base de vidro */
 .timeline-dot {
     position: absolute;
     right: -8px;
@@ -389,8 +579,12 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: var(--bg-offwhite);
-    border: 2px solid var(--blue-cobalt);
+    
+    /* Fundo escuro com borda brilhante em vez de bolinha branca sólida */
+    background: rgba(0, 10, 26, 0.9);
+    border: 2px solid rgba(160, 193, 255, 0.4);
+    box-shadow: 0 0 10px rgba(160, 193, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 .timeline-item.right .timeline-dot {
@@ -398,10 +592,17 @@ body {
 }
 
 .timeline-content {
-    border: 2px solid var(--bg-offwhite);
-    padding: 25px;
-    background-color: rgba(0, 58, 128, 0.4);
     width: 100%;
+    padding: 25px;
+    
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    
+    border: 1px solid rgba(236, 242, 255, 0.2);
+    border-radius: 4px;
+    
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-date {
@@ -416,6 +617,26 @@ body {
     font-size: 0.9rem;
     margin-bottom: 15px;
     display: block;
+}
+
+/* ==========================================================================
+   EFEITOS DE HOVER DA LINHA DO TEMPO
+   ========================================================================== */
+
+/* Quando passar o mouse no item, a caixa acende (igual aos cards) */
+.timeline-item:hover .timeline-content {
+    background: rgba(0, 68, 255, 0.15);
+    border-color: rgba(160, 193, 255, 0.5);
+    box-shadow: 
+        0 0 30px rgba(0, 81, 255, 0.2),
+        inset 0 0 15px rgba(160, 193, 255, 0.1);
+}
+
+/* Quando passar o mouse no item, a bolinha central acende em neon */
+.timeline-item:hover .timeline-dot {
+    background: #a0c1ff;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px #a0c1ff;
 }
 
 /* ==========================================================================

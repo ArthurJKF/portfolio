@@ -67,43 +67,125 @@ export default function Portfolio() {
       {/* SEÇÃO 3: APLICAÇÕES E SOFTWARES */}
       <section className="section-block">
         <h2 className="section-title">APLICAÇÕES E SOFTWARES</h2>
-        <div className="content-grid">
-          <div className="card-brutal border-highlight">
-            <span className="card-status status-active">Em Andamento</span>
-            <h3>Sistema Web Front-End Agro</h3>
-            <span className="card-subtitle">Hï Tech — Projeto Comercial</span>
-            <p>Sistema corporativo focado na intermediação entre produtores, cooperativas e demandas do setor agronegócio. Maior projeto já fechado.</p>
-            <ul className="tech-stack">
-              <li>Atuação: Dev Front-End</li>
-              <li>Fase: Alinhamento arquitetural & handoff de UI/UX</li>
-            </ul>
+        
+        {/* PROJETO 1: DESTAQUE (NDA) */}
+        <div className="project-wide-card card-brutal animate-cascade">
+          <div className="project-header">
+            <div className="title-group">
+              <h3>Sistema Web Front-End Agro</h3>
+              <span className="card-subtitle">Hï Tech — Projeto Comercial</span>
+            </div>
+            <div className="project-badges">
+              <span className="card-status status-active">Projeto Confidencial (NDA)</span>
+            </div>
           </div>
 
-          <div className="card-brutal">
-            <span className="card-status status-active">Em Estruturação</span>
-            <h3>App Mobile "Recipie"</h3>
-            <span className="card-subtitle">UTFPR — Análise e Projeto de Algoritmos</span>
-            <p>Aplicativo móvel que cruza ingredientes disponíveis na geladeira do usuário para filtrar e sugerir receitas viáveis.</p>
-            <ul className="tech-stack">
-              <li>Kotlin</li>
-              <li>Jetpack Compose</li>
-              <li>Room Database</li>
-              <li>Retrofit + Coroutines</li>
-              <li>API MealDB</li>
-            </ul>
+          <div className="project-content">
+            <div className="project-description">
+              <p>
+                Sistema corporativo focado na intermediação entre produtores, cooperativas e demandas do setor agronegócio. 
+                O maior projeto já fechado pela empresa. No front-end, o desafio é lidar com a alta complexidade de regras 
+                de negócio, como o rateio de insumos e a máquina de estados das cotações.
+              </p>
+              
+              <ul className="tech-stack-inline">
+                <li>JavaScript</li>
+                <li>Vite + React</li>
+                <li>React Router</li>
+                <li>TanStack Query</li>
+                <li>Material UI (MUI)</li>
+              </ul>
+            </div>
+
+            {/* Falso Terminal (Mock Visual) */}
+            <div className="project-architecture-mock">
+              <div className="mock-header">
+                <span className="mock-dot red"></span>
+                <span className="mock-dot yellow"></span>
+                <span className="mock-dot green"></span>
+                <span className="mock-title">Regras de Negócio (Core)</span>
+              </div>
+              <ul className="architecture-rules">
+                <li><span className="rule-key">Módulo:</span> Catálogo Dinâmico de Insumos</li>
+                <li><span className="rule-key">Lógica:</span> Rateio do pedido final entre produtores</li>
+                <li>
+                  <span className="rule-key">Workflow:</span> 
+                  <code className="workflow-state">ABERTA &rarr; EM_COTACAO &rarr; FINALIZADA</code>
+                </li>
+                <li className="rule-error">
+                  <span className="rule-key">Exception:</span> Erro 409 ao editar demanda já em cotação.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* PROJETOS 2 E 3: LADO A LADO */}
+        <div className="projects-grid-half">
+          
+          {/* PROJETO 2: RECIPIE */}
+          <div className="card-brutal project-half-card animate-cascade">
+            <div className="project-header-small">
+              <h3>App Mobile "Recipie"</h3>
+              <span className="card-status status-active">Em Estruturação</span>
+            </div>
+            
+            <div className="project-description-small">
+              <span className="card-subtitle">UTFPR — Análise e Projeto de Algoritmos</span>
+              <p>
+                Aplicativo móvel que cruza ingredientes disponíveis na geladeira do usuário para filtrar e sugerir receitas viáveis.
+              </p>
+              
+              <ul className="tech-stack-inline">
+                <li>Kotlin</li>
+                <li>Jetpack Compose</li>
+                <li>Room DB</li>
+                <li>Retrofit + Coroutines</li>
+              </ul>
+            </div>
+
+            <div className="project-visual-placeholder">
+              <div className="wireframe-mobile">
+                <div className="wf-header"></div>
+                <div className="wf-image"></div>
+                <div className="wf-lines"><span></span><span></span></div>
+              </div>
+              <p className="placeholder-caption">Prototipagem de Interface</p>
+            </div>
           </div>
 
-          <div className="card-brutal">
-            <span className="card-status status-active">Em Planejamento</span>
-            <h3>O Oráculo em Assembly</h3>
-            <span className="card-subtitle">UTFPR — Arquitetura de Computadores</span>
-            <p>Programa interativo via terminal com lógica de Busca Binária para adivinhar números de 0 a 1000 no menor número de tentativas. Futura instalação interativa nos terminais do MUTEC (Museu da Tecnologia da UTFPR).</p>
-            <ul className="tech-stack">
-              <li>Assembly</li>
-              <li>Busca Binária</li>
-              <li>Terminal I/O</li>
-            </ul>
+          {/* PROJETO 3: O ORÁCULO */}
+          <div className="card-brutal project-half-card animate-cascade">
+            <div className="project-header-small">
+              <h3>O Oráculo em Assembly</h3>
+              <span className="card-status status-active">Em Estruturação</span>
+            </div>
+            
+            <div className="project-description-small">
+              <span className="card-subtitle">UTFPR — Arquitetura de Computadores</span>
+              <p>
+                Programa interativo via terminal com lógica de Busca Binária para adivinhar números no menor número de tentativas. 
+                Futura instalação nos terminais do MUTEC.
+              </p>
+              
+              <ul className="tech-stack-inline">
+                <li>Assembly</li>
+                <li>Busca Binária</li>
+                <li>Terminal I/O</li>
+              </ul>
+            </div>
+
+            <div className="project-visual-placeholder code-style">
+              <code>
+                {">"} INICIANDO BUSCA BINÁRIA...<br/>
+                {">"} TENTATIVA 1: 500<br/>
+                [USUÁRIO]: MAIOR<br/>
+                {">"} TENTATIVA 2: 750
+              </code>
+              <p className="placeholder-caption">I/O no Terminal</p>
+            </div>
           </div>
+
         </div>
       </section>
 

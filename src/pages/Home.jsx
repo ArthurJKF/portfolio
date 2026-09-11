@@ -1,16 +1,12 @@
 import { Link } from 'react-router-dom'
-import { LinkedinLogo, GithubLogo, InstagramLogo, WhatsappLogo, ArrowUpRight } from '@phosphor-icons/react'
+import { LinkedinLogo, GithubLogo, InstagramLogo, WhatsappLogo } from '@phosphor-icons/react'
 
 export default function Home() {
   return (
     <div className="page-container" style={{ paddingTop: '80px', paddingBottom: '40px' }}>
       <main className="home-container">
 
-        {/* Status Pill Superior */}
-        <div className="status-pill-hero">
-          <span className="status-dot"></span>
-          <span>UTFPR • Hï Tech • Curitiba, PR</span>
-        </div>
+  
 
         {/* Nome Principal em Syne */}
         <h1 className="main-title">
@@ -19,7 +15,7 @@ export default function Home() {
 
         {/* Tagline Sofisticada em Instrument Serif */}
         <p className="tagline">
-          Engenharia de Software, Estratégia Comercial & Liderança
+          Desenvolvimento de Software e Estratégia de Negócios
         </p>
 
         {/* Ações com Estilo Tátil */}
@@ -27,7 +23,6 @@ export default function Home() {
           <div className="buttons-group">
             <Link to="/portfolio" className="btn-editorial primary">
               <span>Acessar Portfólio</span>
-              <ArrowUpRight size={18} weight="bold" />
             </Link>
             <Link to="/colecao" className="btn-editorial secondary">
               <span>Coleção de Criações</span>

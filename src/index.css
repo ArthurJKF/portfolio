@@ -268,7 +268,7 @@ body {
    4. HOME / HERO EDITORIAL (PORTAL MINIMALISTA)
    ========================================================================== */
 .home-container {
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -277,22 +277,6 @@ body {
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
-}
-
-.status-pill-hero {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 16px;
-    background: rgba(13, 26, 45, 0.9);
-    border: 1px solid var(--border-crisp);
-    border-radius: var(--radius-pill);
-    font-size: 0.74rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--text-primary);
-    margin-bottom: 28px;
 }
 
 .hero-flag {
@@ -530,19 +514,6 @@ body {
     line-height: 1.05;
 }
 
-.section-lead-phrase {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-    color: var(--paper-cream);
-    max-width: 680px;
-    line-height: 1.38;
-    letter-spacing: 0.25px;
-    padding-left: 18px;
-    border-left: 2.5px solid var(--blue-accent);
-    margin-top: 4px;
-}
-
 /* ==========================================================================
    6. SEÇÃO 01: SOBRE MIM (CANVAS EDITORIAL EXPANSIVO)
    ========================================================================== */
@@ -586,7 +557,7 @@ body {
     font-weight: 600;
 }
 
-/* Pilares Arquiteturais (Substitui cards soltos) */
+/* Cards compactos de perfil e conquistas */
 .about-pillars-stack {
     display: flex;
     flex-direction: column;
@@ -602,22 +573,43 @@ body {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
+.compact-achievement-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+}
+
+.compact-achievement-card h3 {
+    font-family: var(--font-title);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--paper-cream);
+    line-height: 1.2;
+    margin: 14px 0 4px;
+}
+
+.compact-achievement-card .card-subtitle {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.compact-achievement-card .milestone-badge-top {
+    margin-bottom: 0;
+}
+
+.compact-achievement-card .milestone-actions {
+    gap: 8px;
+}
+
+.compact-achievement-card .btn-milestone-action {
+    padding: 7px 10px;
+    font-size: 0.68rem;
+}
+
 .pillar-block:hover {
     transform: translateY(-2px);
     border-color: var(--paper-cream);
-}
-
-.pillar-title {
-    font-family: var(--font-title);
-    font-size: 1rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--paper-cream);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .pillar-dot {
@@ -625,12 +617,6 @@ body {
     height: 8px;
     background: var(--blue-cobalt);
     border-radius: 50%;
-}
-
-.pillar-desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
 }
 
 /* ==========================================================================
@@ -1176,26 +1162,7 @@ body {
     margin-top: 18px !important;
 }
 
-/* ==========================================================================
-   8. SEÇÃO 03: CONQUISTAS E MARCOS (PAINEL DE MARCOS)
-   ========================================================================== */
-.milestones-showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 32px;
-}
-
-.milestone-item {
-    background: var(--bg-navy-surface);
-    border: 2px solid var(--border-crisp);
-    border-radius: var(--radius-md);
-    padding: 38px;
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
+/* Cards de destaque reutilizados em Sobre Mim */
 .milestone-badge-top {
     display: flex;
     justify-content: space-between;
@@ -1210,14 +1177,6 @@ body {
     color: var(--blue-accent);
     display: block;
     font-weight: 600;
-}
-
-.milestone-item h3 {
-    font-family: var(--font-title);
-    font-size: 1.55rem;
-    font-weight: 900;
-    color: var(--paper-cream);
-    line-height: 1.2;
 }
 
 .milestone-actions {
@@ -1434,23 +1393,13 @@ body {
     flex-wrap: wrap;
 }
 
-.institution-badge-box {
-    font-family: var(--font-title);
-    font-weight: 900;
-    font-size: 0.84rem;
-    color: #ffffff;
-    background: var(--blue-cobalt);
-    padding: 4px 12px;
-    border-radius: var(--radius-sm);
-    letter-spacing: 0.5px;
-    flex-shrink: 0;
-}
-
 .formation-status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-family: var(--font-mono);
     font-size: 0.7rem;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.4px;
     padding: 3px 8px;
     border-radius: var(--radius-sm);
@@ -1458,6 +1407,10 @@ body {
     color: #93c5fd;
     border: 1px solid rgba(147, 197, 253, 0.35);
     white-space: nowrap;
+}
+
+.formation-status-tag svg {
+    flex-shrink: 0;
 }
 
 .formation-item-card h3 {

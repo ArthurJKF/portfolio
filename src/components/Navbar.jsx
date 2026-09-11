@@ -42,10 +42,6 @@ export default function Navbar() {
                   <span className="tree-branch">├──</span>
                   <span className="file-name">projetos.tsx</span>
                 </a>
-                <a href="/portfolio#conquistas" className="tree-file">
-                  <span className="tree-branch">├──</span>
-                  <span className="file-name">conquistas.log</span>
-                </a>
                 <a href="/portfolio#trajetoria" className="tree-file">
                   <span className="tree-branch">├──</span>
                   <span className="file-name">trajetoria.timeline</span>

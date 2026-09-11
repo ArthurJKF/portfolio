@@ -31,7 +31,6 @@ export default function Footer() {
                 <li><a href="/portfolio#formacao">Formação</a></li>
                 <li><a href="/portfolio#projetos">Aplicações</a></li>
                 <li><a href="/portfolio#stack">Stack</a></li>
-                <li><a href="/portfolio#conquistas">Conquistas</a></li>
                 <li><a href="/portfolio#certificados">Certificações</a></li>
                 <li><a href="/portfolio#trajetoria">Trajetória</a></li>
                 <li><a href="/portfolio#contato">Contato</a></li>

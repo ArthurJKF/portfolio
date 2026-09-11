@@ -8,6 +8,7 @@ import {
   GithubLogo,
   InstagramLogo,
   CheckCircle,
+  Hourglass,
   X,
   ArrowUpRight
 } from '@phosphor-icons/react'
@@ -204,7 +205,7 @@ export default function Portfolio() {
     <main className="page-container">
       <header className="page-header">
         <h1 className="page-title">PORTFÓLIO</h1>
-        <p className="page-subtitle">Engenharia de Software, Estratégia Comercial & Liderança</p>
+        <p className="page-subtitle">Desenvolvimento de Software e Estratégia de Negócios</p>
       </header>
 
       {/* ====================================================================
@@ -213,21 +214,18 @@ export default function Portfolio() {
       <section id="sobre-mim" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">01 // Perfil & Visão</span>
+            <span className="section-eyebrow">Perfil & Visão</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">SOBRE MIM</h2>
-            <p className="section-lead-phrase">
-              A intersecção entre raciocínio analítico de engenharia de software e liderança executiva em negócios de tecnologia.
-            </p>
           </div>
         </div>
         
         <div className="about-editorial-canvas">
           <div className="about-main-column">
             <div className="about-lead-quote">
-              "Construo sistemas para resolver desafios complexos de negócio. Minha atuação combina rigor de engenharia de software, raciocínio analítico e visão comercial estratégica."
+              Sou estudante de Sistemas de Informação na UTFPR (3º período) e Gerente de Negócios na Hï Tech (Empresa Júnior de Tecnologia).
             </div>
 
             <div className="about-narrative">
@@ -240,39 +238,58 @@ export default function Portfolio() {
               <p>
                 Representei o Brasil na <strong>Universidade de Oxford (Inglaterra)</strong> em simulações diplomáticas perante mais de 200 delegados integralmente em inglês, gabaritei 100% o exame oficial de Cambridge e trago a formação técnica em cooperativismo para aplicar empatia e agilidade na resolução de problemas reais.
               </p>
+              <p>
+                Na frente de engenharia, desenvolvo com React, Vite e TanStack Query, estruturando interfaces reativas, estado confiável e tratamento rigoroso de exceções. Na frente comercial, conduzo reuniões diagnósticas, formulo propostas de alto valor e lidero equipes na Hï Tech, incluindo a coordenação do Curitiba Júnior para 700 congressistas.
+              </p>
+              <p>
+                Minha comunicação combina oratória internacional, experiência diplomática em Oxford, proficiência máxima em Cambridge e a capacidade de traduzir termos técnicos complexos para clientes e stakeholders.
+              </p>
             </div>
           </div>
 
           <div className="about-pillars-stack">
-            <div className="pillar-block">
-              <div className="pillar-title">
-                <span className="pillar-dot"></span>
-                Engenharia & Front-End
+            <div className="pillar-block compact-achievement-card compact-about-achievement">
+              <div className="milestone-badge-top">
+                <span className="card-tag">Aprovação & Resiliência</span>
+                <span className="formation-status-pill">Vestibular & ENEM</span>
               </div>
-              <div className="pillar-desc">
-                Desenvolvimento com React, Vite, TanStack Query e arquitetura limpa. Foco em interfaces reativas, confiabilidade de estado e tratamento rigoroso de exceções.
+              <h3>1º Lugar PUCPR & Ingresso na UTFPR</h3>
+              <span className="card-subtitle">Superação de Limites Financeiros & Foco Autodidata</span>
+              <ul className="project-bullets-list">
+                <li><strong>1º Lugar Geral na PUCPR:</strong> Aprovado direto do terceirão em Engenharia de Software.</li>
+                <li><strong>Estratégia prática:</strong> Buscou qualificações gratuitas no SENAI e estudou com disciplina própria.</li>
+                <li><strong>Aprovação Federal (+ENEM):</strong> Ingressou em curso de alta concorrência na UTFPR sem cursinho pago.</li>
+              </ul>
+              <div className="milestone-actions">
+                <a href={LINKEDIN_APROVACAO_POST_URL} target="_blank" rel="noreferrer" className="btn-milestone-action btn-milestone-primary" title="Acessar publicação no LinkedIn">
+                  <LinkedinLogo size={16} weight="bold" />
+                  <span>Ver post</span>
+                  <ArrowUpRight size={14} weight="bold" />
+                </a>
               </div>
             </div>
 
-            <div className="pillar-block">
-              <div className="pillar-title">
-                <span className="pillar-dot"></span>
-                Estratégia Comercial & Gestão
+            <div className="pillar-block compact-achievement-card compact-about-achievement">
+              <div className="milestone-badge-top">
+                <span className="card-tag">Proficiência Internacional</span>
+                <span className="formation-status-pill">100% Gabarito</span>
               </div>
-              <div className="pillar-desc">
-                Gestão de equipe na EJ, condução de reuniões diagnósticas, formulação de propostas de alto valor e coordenação no Curitiba Júnior (700 congressistas).
+              <h3>Gabarito Completo — Exame Cambridge</h3>
+              <span className="card-subtitle">PES English & Cambridge Assessment English</span>
+              <ul className="project-bullets-list">
+                <li><strong>Pontuação máxima:</strong> 100% em <em>Speaking</em>, <em>Writing</em> e <em>Listening</em>.</li>
+                <li><strong>Agilidade & Destaque:</strong> Primeiro aluno das salas a concluir todas as etapas oficiais.</li>
+                <li><strong>Aplicação prática:</strong> Base para liderar debates diplomáticos em Oxford e apresentações em inglês.</li>
+              </ul>
+              <div className="milestone-actions">
+                <a href={CAMBRIDGE_PDF_URL} target="_self" className="btn-milestone-action" title="Visualizar documento em PDF">
+                  <FileText size={16} weight="bold" />
+                  <span>Ver PDF</span>
+                  <ArrowUpRight size={14} weight="bold" />
+                </a>
               </div>
             </div>
 
-            <div className="pillar-block">
-              <div className="pillar-title">
-                <span className="pillar-dot"></span>
-                Comunicação & Liderança
-              </div>
-              <div className="pillar-desc">
-                Oratória internacional na Universidade de Oxford, gabarito pleno em Cambridge e habilidade de traduzir termos técnicos complexos para clientes e stakeholders.
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -288,9 +305,6 @@ export default function Portfolio() {
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">APLICAÇÕES & SOFTWARES</h2>
-            <p className="section-lead-phrase">
-              Sistemas em produção corporativa, algoritmos de otimização de hardware e soluções móveis orientadas à utilidade real.
-            </p>
           </div>
         </div>
         
@@ -436,97 +450,16 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          03 // CONQUISTAS E MARCOS
-          ==================================================================== */}
-      <section id="conquistas" className="section-block">
-        <div className="section-header-block">
-          <div className="section-header-top">
-            <span className="section-eyebrow">03 // Destaque & Reconhecimento</span>
-            <div className="section-line-decor"></div>
-          </div>
-          <div className="section-header-main">
-            <h2 className="section-title-large">CONQUISTAS E MARCOS</h2>
-            <p className="section-lead-phrase">
-              Resultados comprovados de disciplina acadêmica, autonomia nos estudos e proficiência internacional.
-            </p>
-          </div>
-        </div>
-
-        <div className="milestones-showcase-grid">
-          <div className="milestone-item">
-            <div className="milestone-badge-top">
-              <span className="card-tag">Aprovação & Resiliência</span>
-              <span className="formation-status-pill">Vestibular & ENEM</span>
-            </div>
-            <h3>1º Lugar PUCPR & Ingresso na UTFPR</h3>
-            <span className="card-subtitle">Superação de Limites Financeiros & Foco Autodidata</span>
-            
-            <ul className="project-bullets-list">
-              <li><strong>1º Lugar Geral na PUCPR:</strong> Aprovado direto do terceirão em Engenharia de Software.</li>
-              <li><strong>Estratégia prática:</strong> Sem condições de arcar com mensalidade e sem bolsa, buscou qualificações gratuitas no SENAI e estudou com disciplina própria.</li>
-              <li><strong>Aprovação Federal (+ENEM):</strong> Único aluno do terceirão do SESI a ingressar em curso de alta concorrência em universidade federal sem cursinho pago prévio.</li>
-            </ul>
-
-            <div className="milestone-actions">
-              <a 
-                href={LINKEDIN_APROVACAO_POST_URL} 
-                target="_blank" 
-                rel="noreferrer"
-                className="btn-milestone-action btn-milestone-primary"
-                title="Acessar publicação da aprovação no LinkedIn"
-              >
-                <LinkedinLogo size={16} weight="bold" />
-                <span>Ver post</span>
-                <ArrowUpRight size={14} weight="bold" />
-              </a>
-            </div>
-          </div>
-
-          <div className="milestone-item">
-            <div className="milestone-badge-top">
-              <span className="card-tag">Proficiência Internacional</span>
-              <span className="formation-status-pill">100% Gabarito</span>
-            </div>
-            <h3>Gabarito Completo — Exame Cambridge</h3>
-            <span className="card-subtitle">PES English & Cambridge Assessment English</span>
-            
-            <ul className="project-bullets-list">
-              <li><strong>Pontuação máxima absoluta:</strong> 100% de aproveitamento em todas as competências: <em>Speaking</em>, <em>Writing</em> e <em>Listening</em>.</li>
-              <li><strong>Agilidade & Destaque:</strong> Primeiro aluno de todas as salas a concluir integralmente cada etapa das avaliações oficiais.</li>
-              <li><strong>Aplicação prática:</strong> Base que permitiu liderar debates diplomáticos em Oxford e conduzir apresentações fluidas em inglês.</li>
-            </ul>
-
-            <div className="milestone-actions">
-              <a 
-                href={CAMBRIDGE_PDF_URL} 
-                target={CAMBRIDGE_PDF_URL.startsWith('http') || CAMBRIDGE_PDF_URL.endsWith('.pdf') ? '_blank' : '_self'}
-                rel="noreferrer"
-                className="btn-milestone-action"
-                title="Visualizar documento do exame de Cambridge"
-              >
-                <FileText size={16} weight="bold" />
-                <span>Ver PDF</span>
-                <ArrowUpRight size={14} weight="bold" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================
-          04 // TRAJETÓRIA: NEGÓCIOS & LIDERANÇA
+          03 // TRAJETÓRIA: NEGÓCIOS & LIDERANÇA
           ==================================================================== */}
       <section id="trajetoria" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">04 // Linha do Tempo</span>
+            <span className="section-eyebrow">03 // Linha do Tempo</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">TRAJETÓRIA & LIDERANÇA</h2>
-            <p className="section-lead-phrase">
-              Da diplomacia internacional na Universidade de Oxford à gestão comercial e liderança de projetos de tecnologia.
-            </p>
           </div>
         </div>
 
@@ -650,19 +583,16 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          05 // FORMAÇÃO ACADÊMICA (GRID 3 CARDS)
+          04 // FORMAÇÃO ACADÊMICA (GRID 3 CARDS)
           ==================================================================== */}
       <section id="formacao" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">05 // Base Acadêmica</span>
+            <span className="section-eyebrow">04 // Base Acadêmica</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">FORMAÇÃO ACADÊMICA</h2>
-            <p className="section-lead-phrase">
-              Fundamentos sólidos de ciência da computação combinados com vivência prática em cooperativismo e metodologias ativas.
-            </p>
           </div>
         </div>
         
@@ -670,12 +600,14 @@ export default function Portfolio() {
           {/* CARD 1: UTFPR */}
           <div className="formation-item-card">
             <div className="formation-card-header">
-              <span className="institution-badge-box">UTFPR</span>
-              <span className="formation-status-tag">Cursando: 3º Período · 2025-2029</span>
+              <span className="formation-status-tag" title="Formação em andamento">
+                <Hourglass size={13} weight="bold" aria-hidden="true" />
+                <span>Ago/2025 — Dez/2029</span>
+              </span>
             </div>
             <div>
-              <h3>Sistemas de Informação</h3>
-              <span className="formation-inst-label">Universidade Tecnológica Federal do Paraná</span>
+              <h3>Bacharelado em Sistemas de Informação</h3>
+              <span className="formation-inst-label">Universidade Tecnológica Federal do Paraná (UTFPR) — Curitiba</span>
             </div>
             <div className="formation-photo-slot">
               <ImageIcon size={28} />
@@ -691,12 +623,14 @@ export default function Portfolio() {
           {/* CARD 2: SESI / SENAI */}
           <div className="formation-item-card">
             <div className="formation-card-header">
-              <span className="institution-badge-box">SENAI</span>
-              <span className="formation-status-tag">Concluído · 2022–2024</span>
+              <span className="formation-status-tag" title="Formação concluída">
+                <CheckCircle size={15} weight="bold" aria-hidden="true" />
+                <span>Jan/2023 — Dez/2024</span>
+              </span>
             </div>
             <div>
               <h3>Técnico em Cooperativismo</h3>
-              <span className="formation-inst-label">SESI Centro / SENAI Paraná</span>
+              <span className="formation-inst-label">SENAI Paraná — Curitiba</span>
             </div>
             <div className="formation-photo-slot">
               <ImageIcon size={28} />
@@ -712,12 +646,14 @@ export default function Portfolio() {
           {/* CARD 3: SESI CENTRO */}
           <div className="formation-item-card">
             <div className="formation-card-header">
-              <span className="institution-badge-box">SESI</span>
-              <span className="formation-status-tag">Concluído · 2022–2024</span>
+              <span className="formation-status-tag" title="Formação concluída">
+                <CheckCircle size={15} weight="bold" aria-hidden="true" />
+                <span>Jan/2022 — Dez/2024</span>
+              </span>
             </div>
             <div>
-              <h3>Ensino Médio com PBL</h3>
-              <span className="formation-inst-label">SESI Centro Curitiba</span>
+              <h3>Ensino Médio</h3>
+              <span className="formation-inst-label">SESI Centro — Curitiba</span>
             </div>
             <div className="formation-photo-slot">
               <ImageIcon size={28} />
@@ -733,19 +669,16 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          06 // STACK & FERRAMENTAS (GRID 2×2)
+          05 // STACK & FERRAMENTAS (GRID 2×2)
           ==================================================================== */}
       <section id="stack" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">06 // Competências Técnicas</span>
+            <span className="section-eyebrow">05 // Competências Técnicas</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">STACK & FERRAMENTAS</h2>
-            <p className="section-lead-phrase">
-              Linguagens, ecossistemas de desenvolvimento e ferramentas de gestão organizadas por domínio de aplicação.
-            </p>
           </div>
         </div>
 
@@ -754,7 +687,6 @@ export default function Portfolio() {
           <div className="stack-card-duo">
             <div className="stack-card-header">
               <h4><span className="pillar-dot"></span>Front-End & Web</h4>
-              <p>Aplicações reativas, componentização e consumo eficiente de APIs.</p>
             </div>
             <div className="stack-badges-wrap">
               <span className="stack-badge-pro">JavaScript (ES6+)</span>
@@ -771,7 +703,6 @@ export default function Portfolio() {
           <div className="stack-card-duo">
             <div className="stack-card-header">
               <h4><span className="pillar-dot"></span>Mobile & Baixo Nível</h4>
-              <p>Desenvolvimento nativo, estruturas de dados algorítmicas e arquitetura de hardware.</p>
             </div>
             <div className="stack-badges-wrap">
               <span className="stack-badge-pro">Kotlin</span>
@@ -788,7 +719,6 @@ export default function Portfolio() {
           <div className="stack-card-duo">
             <div className="stack-card-header">
               <h4><span className="pillar-dot"></span>Negócios & Gestão</h4>
-              <p>Práticas ágeis, levantamento de requisitos e condução de negociações B2B.</p>
             </div>
             <div className="stack-badges-wrap">
               <span className="stack-badge-pro">Vendas Consultivas B2B</span>
@@ -804,7 +734,6 @@ export default function Portfolio() {
           <div className="stack-card-duo">
             <div className="stack-card-header">
               <h4><span className="pillar-dot"></span>Ferramentas & Design</h4>
-              <p>Controle de versão, prototipagem de interfaces e edição multimídia.</p>
             </div>
             <div className="stack-badges-wrap">
               <span className="stack-badge-pro">Git & GitHub</span>
@@ -819,19 +748,16 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          07 // CERTIFICAÇÕES E CURSOS (GRID 3×N + POPUP)
+          06 // CERTIFICAÇÕES E CURSOS (GRID 3×N + POPUP)
           ==================================================================== */}
       <section id="certificados" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">07 // Qualificações Formais</span>
+            <span className="section-eyebrow">06 // Qualificações Formais</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">CERTIFICAÇÕES & CURSOS</h2>
-            <p className="section-lead-phrase">
-              Comprovações oficiais de proficiência em idiomas, desenvolvimento de software, lógica e ferramentas corporativas.
-            </p>
           </div>
         </div>
 
@@ -872,19 +798,16 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          08 // CONTATO
+          07 // CONTATO
           ==================================================================== */}
       <section id="contato" className="section-block" style={{ marginBottom: '40px' }}>
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">08 // Conexão Direta</span>
+            <span className="section-eyebrow">07 // Conexão Direta</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
             <h2 className="section-title-large">VAMOS CONVERSAR</h2>
-            <p className="section-lead-phrase">
-              Aberto a novos desafios de engenharia, negócios de tecnologia e conexões acadêmicas.
-            </p>
           </div>
         </div>
 

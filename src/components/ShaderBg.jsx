@@ -16,7 +16,7 @@ export default function ShaderBg() {
       <ShaderGradient
         animate="on"
         axesHelper="off"
-        brightness={0.7}
+        brightness={0.5}
         cAzimuthAngle={180}
         cDistance={2.93}
         cPolarAngle={80}

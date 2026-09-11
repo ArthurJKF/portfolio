@@ -38,21 +38,21 @@ export default function Navbar() {
                   <span className="tree-branch">├──</span>
                   <span className="file-name">sobre_mim.md</span>
                 </a>
-                <a href="/portfolio#projetos" className="tree-file">
+                <a href="/portfolio#formacao" className="tree-file">
                   <span className="tree-branch">├──</span>
-                  <span className="file-name">projetos.tsx</span>
+                  <span className="file-name">formacao.edu</span>
                 </a>
                 <a href="/portfolio#trajetoria" className="tree-file">
                   <span className="tree-branch">├──</span>
                   <span className="file-name">trajetoria.timeline</span>
                 </a>
-                <a href="/portfolio#formacao" className="tree-file">
+                <a href="/portfolio#projetos" className="tree-file">
                   <span className="tree-branch">├──</span>
-                  <span className="file-name">formacao.edu</span>
+                  <span className="file-name">projetos.tsx</span>
                 </a>
                 <a href="/portfolio#stack" className="tree-file">
                   <span className="tree-branch">├──</span>
-                  <span className="file-name">stack.json</span>
+                  <span className="file-name">competencias.json</span>
                 </a>
                 <a href="/portfolio#certificados" className="tree-file">
                   <span className="tree-branch">├──</span>

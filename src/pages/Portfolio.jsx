@@ -1,20 +1,22 @@
 import { useState } from 'react'
-import { 
-  FileText, 
-  Image as ImageIcon, 
-  LinkedinLogo, 
-  WhatsappLogo, 
-  EnvelopeSimple, 
+import {
+  FileText,
+  Image as ImageIcon,
+  Certificate,
+  CalendarBlank,
+  Clock,
+  Star,
+  LinkedinLogo,
+  WhatsappLogo,
+  EnvelopeSimple,
   GithubLogo,
-  InstagramLogo,
   CheckCircle,
   Hourglass,
   X,
   ArrowUpRight
 } from '@phosphor-icons/react'
 
-// Link compartilhado do PDF oficial do Exame de Cambridge (utilizado no card de gabarito e na seção de certificados)
-const CAMBRIDGE_PDF_URL = '#contato'
+const CAMBRIDGE_PDF_URL = '/certificados/cambridge-ket.pdf'
 
 // Link do post sobre a aprovação no LinkedIn
 const LINKEDIN_APROVACAO_POST_URL = 'https://www.linkedin.com/in/arthur-jacomel/'
@@ -22,54 +24,72 @@ const LINKEDIN_APROVACAO_POST_URL = 'https://www.linkedin.com/in/arthur-jacomel/
 const CERTS_DATA = [
   {
     id: 'cambridge',
-    category: 'Proficiência Internacional',
+    category: 'Inglês',
     year: '2021',
-    title: 'Exame Oficial de Cambridge (PES English)',
-    institution: 'Cambridge Assessment English & Positivo',
-    cargaHoraria: 'Formação Extensiva Anual',
-    categoria: 'Idiomas & Comunicação Global',
-    competencias: '100% de pontuação máxima em Speaking, Writing e Listening. Primeiro aluno de todas as salas a finalizar cada etapa.',
-    pdfUrl: CAMBRIDGE_PDF_URL,
+    title: 'Key English Test (KET)',
+    institution: 'Cambridge Assessment English',
+    cargaHoraria: 'Exame oficial',
+    categoria: 'Proficiência Internacional',
+    competencias: 'Certificação Cambridge English Entry Level Certificate in ESOL International (Entry 3), com Grade A, nível B1 e pontuação 150.',
+    destaque: 'Grade A · B1 · Score 150',
+    data: '23 de outubro de 2021',
+    documentUrl: '/certificados/cambridge-ket.pdf',
   },
   {
     id: 'python',
     category: 'Programação',
-    year: '2024',
+    year: '2025',
     title: 'Programação em Python',
-    institution: 'SENAI Paraná',
-    cargaHoraria: '40 horas',
+    institution: 'SENAI - Dr. Celso Charuri',
+    cargaHoraria: '32 horas',
     categoria: 'Desenvolvimento de Software',
-    competencias: 'Sintaxe fundamental da linguagem, estruturas de decisão, laços de repetição, funções e automação de scripts.',
+    competencias: 'Aplicações com Python, variáveis, reuso de software, execução contínua, strings, dicionários, orientação a objetos e desenvolvimento de projeto aplicado.',
+    destaque: 'Projeto aplicado',
+    data: '06/03/2025 a 17/03/2025',
+    registro: 'Livro 00004 3058 · Página 214 · Nº 18388',
+    documentUrl: '/certificados/python.pdf',
   },
   {
     id: 'logica',
     category: 'Fundamentos',
-    year: '2024',
+    year: '2025',
     title: 'Introdução à Lógica de Programação',
-    institution: 'SENAI Paraná',
+    institution: 'SENAI - Dr. Celso Charuri',
     cargaHoraria: '40 horas',
     categoria: 'Lógica Computacional',
-    competencias: 'Algoritmos em Portugol, testes de mesa, variáveis, operadores relacionais/lógicos e resolução metódica de problemas.',
+    competencias: 'Fundamentos de lógica, algoritmos, operadores, estruturas condicionais e de repetição, arrays, funções e projeto prático integrador.',
+    destaque: 'Projeto prático integrador',
+    data: '10/02/2025 a 21/02/2025',
+    registro: 'Livro 00004 3058 · Página 212 · Nº 18353',
+    documentUrl: '/certificados/logica-de-programacao.pdf',
   },
   {
     id: 'web',
     category: 'Web',
-    year: '2024',
-    title: 'Desenvolvimento Web Front-End',
-    institution: 'SENAI Paraná',
-    cargaHoraria: '60 horas',
+    year: '2025',
+    title: 'Desenvolvendo Web Front-End',
+    institution: 'SENAI - Dr. Celso Charuri',
+    cargaHoraria: '40 horas',
     categoria: 'Desenvolvimento Web',
-    competencias: 'Estruturação semântica em HTML5, estilização básica em CSS3, noções de JavaScript e introdução a frameworks responsivos.',
+    competencias: 'HTML, CSS, JavaScript, DOM, Git e GitHub, APIs, React com Vite, frameworks, deploy com Vercel, analytics, logs e observabilidade.',
+    destaque: 'React, Vite e deploy',
+    data: '28/04/2025 a 26/05/2025',
+    registro: 'Livro 00004 3058 · Página 219 · Nº 18483',
+    documentUrl: '/certificados/desenvolvimento-web-front-end.pdf',
   },
   {
     id: 'excel',
     category: 'Gestão & Dados',
-    year: '2024',
+    year: '2025',
     title: 'Excel Básico ao Intermediário',
-    institution: 'SENAI Paraná',
+    institution: 'SENAI - Dr. Celso Charuri',
     cargaHoraria: '40 horas',
     categoria: 'Análise e Produtividade',
-    competencias: 'Fórmulas lógicas (SE, PROCV), tabelas dinâmicas, tratamento de bases de dados e elaboração de relatórios corporativos.',
+    competencias: 'Atalhos, painéis, organização de linhas e colunas, fórmulas, funções lógicas e estatísticas, filtros, buscas, tabelas dinâmicas e gráficos.',
+    destaque: 'Tabelas dinâmicas e gráficos',
+    data: '10/02/2025 a 21/02/2025',
+    registro: 'Livro 00004 3058 · Página 213 · Nº 18360',
+    documentUrl: '/certificados/excel.pdf',
   },
 ]
 
@@ -214,51 +234,55 @@ export default function Portfolio() {
       <section id="sobre-mim" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">Perfil & Visão</span>
+            <span className="section-eyebrow">01 // Sobre mim</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
-            <h2 className="section-title-large">SOBRE MIM</h2>
+            <h2 className="section-title-large">QUEM SOU EU?</h2>
           </div>
         </div>
         
         <div className="about-editorial-canvas">
           <div className="about-main-column">
             <div className="about-lead-quote">
-              Sou estudante de Sistemas de Informação na UTFPR (3º período) e Gerente de Negócios na Hï Tech (Empresa Júnior de Tecnologia).
+              Transformo problemas de negócio em produtos digitais claros, sustentáveis e possíveis de executar.
             </div>
 
             <div className="about-narrative">
               <p>
-                Sou estudante de <strong>Sistemas de Informação na UTFPR</strong> (3º período) e <strong>Gerente de Negócios na Hï Tech</strong> (Empresa Júnior de Tecnologia). Meu perfil une o que o mercado costuma separar: a capacidade técnica de arquitetar aplicações com a sensibilidade de entender o cliente, negociar contratos e liderar equipes multidisciplinares.
+                Uno engenharia e visão de negócio: desenvolvo interfaces reativas com React, Vite e TanStack Query, enquanto conduzo reuniões diagnósticas, propostas comerciais e decisões orientadas ao cliente.
               </p>
               <p>
-                Liderei a negociação e atuo na execução técnica do maior projeto comercial da história da empresa (R$ 22.000 para o setor Agro), lidando com regras de negócio densas como rateio dinâmico de insumos e máquinas de estado finitos para cotações.
+                Meu foco é conectar execução técnica, clareza de produto e liderança colaborativa, com experiência em equipes multidisciplinares e na coordenação do Curitiba Júnior para 700 congressistas.
               </p>
-              <p>
-                Representei o Brasil na <strong>Universidade de Oxford (Inglaterra)</strong> em simulações diplomáticas perante mais de 200 delegados integralmente em inglês, gabaritei 100% o exame oficial de Cambridge e trago a formação técnica em cooperativismo para aplicar empatia e agilidade na resolução de problemas reais.
-              </p>
-              <p>
-                Na frente de engenharia, desenvolvo com React, Vite e TanStack Query, estruturando interfaces reativas, estado confiável e tratamento rigoroso de exceções. Na frente comercial, conduzo reuniões diagnósticas, formulo propostas de alto valor e lidero equipes na Hï Tech, incluindo a coordenação do Curitiba Júnior para 700 congressistas.
-              </p>
-              <p>
-                Minha comunicação combina oratória internacional, experiência diplomática em Oxford, proficiência máxima em Cambridge e a capacidade de traduzir termos técnicos complexos para clientes e stakeholders.
-              </p>
+            </div>
+
+            <div className="about-role-grid">
+              <div>
+                <span className="about-role-label">Formação atual</span>
+                <strong>Sistemas de Informação</strong>
+                <span>UTFPR · 3º período</span>
+              </div>
+              <div>
+                <span className="about-role-label">Atuação atual</span>
+                <strong>Gerente de Negócios</strong>
+                <span>Hï Tech · Empresa Júnior</span>
+              </div>
             </div>
           </div>
 
           <div className="about-pillars-stack">
             <div className="pillar-block compact-achievement-card compact-about-achievement">
               <div className="milestone-badge-top">
-                <span className="card-tag">Aprovação & Resiliência</span>
-                <span className="formation-status-pill">Vestibular & ENEM</span>
+                <span className="achievement-status-pill">
+                  <Star size={13} weight="fill" aria-hidden="true" />
+                  <span>Conquista</span>
+                </span>
               </div>
               <h3>1º Lugar PUCPR & Ingresso na UTFPR</h3>
-              <span className="card-subtitle">Superação de Limites Financeiros & Foco Autodidata</span>
               <ul className="project-bullets-list">
-                <li><strong>1º Lugar Geral na PUCPR:</strong> Aprovado direto do terceirão em Engenharia de Software.</li>
-                <li><strong>Estratégia prática:</strong> Buscou qualificações gratuitas no SENAI e estudou com disciplina própria.</li>
-                <li><strong>Aprovação Federal (+ENEM):</strong> Ingressou em curso de alta concorrência na UTFPR sem cursinho pago.</li>
+                <li><strong>1º Lugar em Engenharia de Software</strong> no vestibular da PUCPR.</li>
+                <li><strong>1° aluno da turma</strong> a conquistar vaga em universidade federal concorrida, com a nota do próprio terceirão. <strong>Sem cursinho.</strong></li>
               </ul>
               <div className="milestone-actions">
                 <a href={LINKEDIN_APROVACAO_POST_URL} target="_blank" rel="noreferrer" className="btn-milestone-action btn-milestone-primary" title="Acessar publicação no LinkedIn">
@@ -271,15 +295,15 @@ export default function Portfolio() {
 
             <div className="pillar-block compact-achievement-card compact-about-achievement">
               <div className="milestone-badge-top">
-                <span className="card-tag">Proficiência Internacional</span>
-                <span className="formation-status-pill">100% Gabarito</span>
+                <span className="achievement-status-pill">
+                  <Star size={13} weight="fill" aria-hidden="true" />
+                  <span>Conquista</span>
+                </span>
               </div>
               <h3>Gabarito Completo — Exame Cambridge</h3>
-              <span className="card-subtitle">PES English & Cambridge Assessment English</span>
               <ul className="project-bullets-list">
                 <li><strong>Pontuação máxima:</strong> 100% em <em>Speaking</em>, <em>Writing</em> e <em>Listening</em>.</li>
-                <li><strong>Agilidade & Destaque:</strong> Primeiro aluno das salas a concluir todas as etapas oficiais.</li>
-                <li><strong>Aplicação prática:</strong> Base para liderar debates diplomáticos em Oxford e apresentações em inglês.</li>
+                <li><strong>Aplicação:</strong> debates diplomáticos em Oxford e apresentações em inglês.</li>
               </ul>
               <div className="milestone-actions">
                 <a href={CAMBRIDGE_PDF_URL} target="_self" className="btn-milestone-action" title="Visualizar documento em PDF">
@@ -295,16 +319,16 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          02 // APLICAÇÕES E SOFTWARES
+          04 // PROJETOS
           ==================================================================== */}
       <section id="projetos" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">02 // Engenharia de Software</span>
+            <span className="section-eyebrow">04 // Projetos</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
-            <h2 className="section-title-large">APLICAÇÕES & SOFTWARES</h2>
+            <h2 className="section-title-large">PRINCIPAIS PROJETOS</h2>
           </div>
         </div>
         
@@ -312,11 +336,11 @@ export default function Portfolio() {
         <div className="project-spotlight-dossier">
           <div className="project-dossier-meta-bar">
             <div className="meta-title-group">
-              <h3>Sistema Web Front-End Agro</h3>
+              <h3>Sistema Web FrontEnd para Agro</h3>
               <span className="meta-client-tag">Hï Tech — Projeto Comercial Corporativo</span>
             </div>
             <div>
-              <span className="card-status status-active">Projeto Comercial Confidencial (NDA)</span>
+              <span className="card-status status-active">EM ANDAMENTO</span>
             </div>
           </div>
 
@@ -373,8 +397,8 @@ export default function Portfolio() {
           <div className="project-half-card recipe-project-card">
             <div>
               <div className="project-half-header">
-                <h3>App Mobile "Recipie"</h3>
-                <span className="card-subtitle-plain">UTFPR — Análise e Projeto de Algoritmos (APS)</span>
+                <h3>Recipie</h3>
+                <span className="card-subtitle-plain">UTFPR — Análise e Projeto de Algoritmos</span>
                 <div className="card-status-row">
                   <span className="card-status status-active">Em Estruturação</span>
                 </div>
@@ -398,21 +422,13 @@ export default function Portfolio() {
               </ul>
             </div>
 
-            <div className="project-visual-placeholder">
-              <div className="wireframe-mobile">
-                <div className="wf-header"></div>
-                <div className="wf-image"></div>
-                <div className="wf-lines"><span></span><span></span></div>
-              </div>
-              <p className="placeholder-caption">Prototipagem de Interface & UX Mobile</p>
-            </div>
           </div>
 
           {/* PROJETO 3: O ORÁCULO */}
           <div className="project-half-card oracle-project-card">
             <div>
               <div className="project-half-header">
-                <h3>O Oráculo em Assembly</h3>
+                <h3>Mathemagical Oracle — Assembly</h3>
                 <span className="card-subtitle-plain">UTFPR — Arquitetura de Computadores</span>
                 <div className="card-status-row">
                   <span className="card-status status-active">Em Estruturação</span>
@@ -438,7 +454,9 @@ export default function Portfolio() {
             </div>
 
             <div className="oracle-visual-grid">
-              <div className="oracle-photo-slot" aria-label="Espaço reservado para foto do Oráculo"></div>
+              <div className="oracle-photo-slot">
+                <img src="/projetos/oraculo.png" alt="Projeto Mathemagical Oracle" />
+              </div>
               <div className="oracle-terminal-wrap">
                 <span className="oracle-example-label">Exemplo raso em JavaScript</span>
                 <OracleTerminal />
@@ -470,8 +488,8 @@ export default function Portfolio() {
           <div className="timeline-row">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
-              <span className="timeline-date">2022 — 2023</span>
-              <h3>Delegações Sesi MUN & OxfordMUN</h3>
+              <span className="timeline-date">Jan/2023 — Mai/2024</span>
+              <h3>Delegação SesiMUN & OxfordMUN</h3>
               <span className="timeline-location">Universidade de Oxford — Oxford, Inglaterra</span>
               <ul className="project-bullets-list">
                 <li>Representação oficial da Suécia no comitê DISEC (+200 delegados de múltiplos países).</li>
@@ -583,12 +601,12 @@ export default function Portfolio() {
       </section>
 
       {/* ====================================================================
-          04 // FORMAÇÃO ACADÊMICA (GRID 3 CARDS)
+          02 // FORMAÇÃO ACADÊMICA (GRID DE 3 CARDS)
           ==================================================================== */}
       <section id="formacao" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">04 // Base Acadêmica</span>
+            <span className="section-eyebrow">02 // Formação</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
@@ -598,7 +616,7 @@ export default function Portfolio() {
         
         <div className="formation-cards-grid">
           {/* CARD 1: UTFPR */}
-          <div className="formation-item-card">
+          <div className="formation-item-card formation-item-card-featured">
             <div className="formation-card-header">
               <span className="formation-status-tag" title="Formação em andamento">
                 <Hourglass size={13} weight="bold" aria-hidden="true" />
@@ -609,14 +627,10 @@ export default function Portfolio() {
               <h3>Bacharelado em Sistemas de Informação</h3>
               <span className="formation-inst-label">Universidade Tecnológica Federal do Paraná (UTFPR) — Curitiba</span>
             </div>
-            <div className="formation-photo-slot">
-              <ImageIcon size={28} />
-              <span>[ Foto: Campus UTFPR Curitiba ]</span>
-            </div>
             <ul className="formation-bullets">
-              <li><strong>Estruturas de Dados 1 e 2:</strong> Algoritmos de busca, árvores, ordenação e arquivos invertidos em C.</li>
-              <li><strong>Técnicas de Programação:</strong> POO avançada, concorrência com Threads e exceptions em Java.</li>
-              <li><strong>Sistemas & Hardware:</strong> Arquitetura de computadores (Assembly) e Análise de Algoritmos.</li>
+              <li><strong>Engenharia de software:</strong> estruturas de dados, algoritmos e análise de complexidade.</li>
+              <li><strong>Programação:</strong> C, Java, orientação a objetos, concorrência e tratamento de exceções.</li>
+              <li><strong>Sistemas:</strong> arquitetura de computadores, Assembly e fundamentos de hardware.</li>
             </ul>
           </div>
 
@@ -632,14 +646,10 @@ export default function Portfolio() {
               <h3>Técnico em Cooperativismo</h3>
               <span className="formation-inst-label">SENAI Paraná — Curitiba</span>
             </div>
-            <div className="formation-photo-slot">
-              <ImageIcon size={28} />
-              <span>[ Foto: Formatura Técnica SESI/SENAI ]</span>
-            </div>
             <ul className="formation-bullets">
-              <li><strong>Gestão & Agilidade:</strong> Prática intensiva com Scrum, Kanban e liderança colaborativa.</li>
-              <li><strong>Contabilidade Gerencial:</strong> Balanço patrimonial, balancete e conciliação financeira.</li>
-              <li><strong>Dinâmicas Corporativas:</strong> Gestão de recursos humanos e projetos orientados à cooperação.</li>
+              <li><strong>Gestão:</strong> Scrum, Kanban, liderança colaborativa e organização de projetos.</li>
+              <li><strong>Negócios:</strong> contabilidade gerencial, recursos humanos e processos cooperativos.</li>
+              <li><strong>Aplicação:</strong> experiência prática em planejamento, comunicação e tomada de decisão.</li>
             </ul>
           </div>
 
@@ -655,126 +665,113 @@ export default function Portfolio() {
               <h3>Ensino Médio</h3>
               <span className="formation-inst-label">SESI Centro — Curitiba</span>
             </div>
-            <div className="formation-photo-slot">
-              <ImageIcon size={28} />
-              <span>[ Foto: Mostra Científica / Formatura ]</span>
-            </div>
             <ul className="formation-bullets">
-              <li><strong>Metodologias Ativas:</strong> Aprendizagem Baseada em Problemas e condução de projetos práticos em equipe.</li>
-              <li><strong>Oratória & Mostras:</strong> Apresentação de dezenas de seminários e projetos em feiras científicas.</li>
-              <li><strong>Clubes Estudantis:</strong> Atuação em clubes de cinema, redação, investimentos e jornal.</li>
+              <li><strong>Aprendizagem:</strong> projetos baseados em problemas e colaboração multidisciplinar.</li>
+              <li><strong>Comunicação:</strong> apresentações, seminários e participação em mostras científicas.</li>
+              <li><strong>Iniciativa:</strong> atuação em clubes de redação, investimentos, cinema e jornal.</li>
             </ul>
           </div>
         </div>
       </section>
 
       {/* ====================================================================
-          05 // STACK & FERRAMENTAS (GRID 2×2)
+          05 // STACK & FERRAMENTAS
           ==================================================================== */}
       <section id="stack" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">05 // Competências Técnicas</span>
+            <span className="section-eyebrow">05 // competências</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
-            <h2 className="section-title-large">STACK & FERRAMENTAS</h2>
+            <h2 className="section-title-large">STACK E HABILIDADES</h2>
           </div>
         </div>
 
         <div className="stack-grid-duo">
-          {/* CARD 1: FRONT-END */}
+          {/* CARD 1: LINGUAGENS */}
           <div className="stack-card-duo">
             <div className="stack-card-header">
-              <h4><span className="pillar-dot"></span>Front-End & Web</h4>
+              <h4><span className="pillar-dot"></span>Stack</h4>
             </div>
             <div className="stack-badges-wrap">
-              <span className="stack-badge-pro">JavaScript (ES6+)</span>
-              <span className="stack-badge-pro">React</span>
-              <span className="stack-badge-pro">Vite</span>
-              <span className="stack-badge-pro">TanStack Query</span>
-              <span className="stack-badge-pro">Material UI (MUI)</span>
-              <span className="stack-badge-pro">HTML5 / CSS3</span>
-              <span className="stack-badge-pro">React Router</span>
-            </div>
-          </div>
-
-          {/* CARD 2: MOBILE & BAIXO NÍVEL */}
-          <div className="stack-card-duo">
-            <div className="stack-card-header">
-              <h4><span className="pillar-dot"></span>Mobile & Baixo Nível</h4>
-            </div>
-            <div className="stack-badges-wrap">
+              <span className="stack-badge-pro">Java</span>
+              <span className="stack-badge-pro">Python</span>
+              <span className="stack-badge-pro">C</span>
               <span className="stack-badge-pro">Kotlin</span>
-              <span className="stack-badge-pro">Jetpack Compose</span>
-              <span className="stack-badge-pro">Room DB</span>
-              <span className="stack-badge-pro">Retrofit</span>
-              <span className="stack-badge-pro">C (Algoritmos)</span>
-              <span className="stack-badge-pro">Java (POO)</span>
-              <span className="stack-badge-pro">Assembly x86</span>
+              <span className="stack-badge-pro">Assembly</span>
+              <span className="stack-badge-pro">React</span>
+              <span className="stack-badge-pro">CSS</span>
+              <span className="stack-badge-pro">HTML</span>
+              <span className="stack-badge-pro">JavaScript</span>
             </div>
           </div>
-
-          {/* CARD 3: GESTÃO & NEGÓCIOS */}
+          
+          {/* CARD 2: GESTÃO & NEGÓCIOS */}
           <div className="stack-card-duo">
             <div className="stack-card-header">
-              <h4><span className="pillar-dot"></span>Negócios & Gestão</h4>
+              <h4><span className="pillar-dot"></span>Gestão</h4>
             </div>
             <div className="stack-badges-wrap">
-              <span className="stack-badge-pro">Vendas Consultivas B2B</span>
+              <span className="stack-badge-pro">Relacionamento com cliente</span>
+              <span className="stack-badge-pro">Gestão de Equipes</span>
+              <span className="stack-badge-pro">Planejamento Estratégico</span>
               <span className="stack-badge-pro">Metodologias Ágeis</span>
-              <span className="stack-badge-pro">Scrum / Kanban</span>
               <span className="stack-badge-pro">Análise de Requisitos</span>
               <span className="stack-badge-pro">Modelagem UML</span>
-              <span className="stack-badge-pro">Gestão de Equipes</span>
             </div>
           </div>
 
-          {/* CARD 4: FERRAMENTAS & DESIGN */}
+          {/* CARD 3: FERRAMENTAS */}
           <div className="stack-card-duo">
             <div className="stack-card-header">
-              <h4><span className="pillar-dot"></span>Ferramentas & Design</h4>
+              <h4><span className="pillar-dot"></span>Ferramentas</h4>
             </div>
             <div className="stack-badges-wrap">
-              <span className="stack-badge-pro">Git & GitHub</span>
-              <span className="stack-badge-pro">Figma (Prototipagem)</span>
+              <span className="stack-badge-pro">Git</span>
+              <span className="stack-badge-pro">GitHub (Prototipagem)</span>
+              <span className="stack-badge-pro">WSL</span>
+              <span className="stack-badge-pro">Linux</span>
               <span className="stack-badge-pro">VS Code</span>
-              <span className="stack-badge-pro">Terminal Bash/Linux</span>
-              <span className="stack-badge-pro">Edição de Vídeo</span>
-              <span className="stack-badge-pro">FL Studio (Áudio)</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ====================================================================
-          06 // CERTIFICAÇÕES E CURSOS (GRID 3×N + POPUP)
+          06 // CERTIFICADOS
           ==================================================================== */}
       <section id="certificados" className="section-block">
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">06 // Qualificações Formais</span>
+            <span className="section-eyebrow">06 // Certificados</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
-            <h2 className="section-title-large">CERTIFICAÇÕES & CURSOS</h2>
+            <h2 className="section-title-large">Qualificações formais</h2>
           </div>
         </div>
 
         <div className="cert-grid-trio">
           {CERTS_DATA.map((cert) => (
             <div key={cert.id} className="cert-card-trio">
-              <div>
+              <div className="cert-card-content">
                 <div className="cert-card-top">
+                  <Certificate className="cert-card-icon" size={30} weight="duotone" />
                   <span className="cert-tag-pill">{cert.category}</span>
-                  <span className="cert-year-badge">{cert.year}</span>
                 </div>
                 <div className="cert-card-info">
                   <h3>{cert.title}</h3>
                   <span className="cert-inst-name">{cert.institution}</span>
                 </div>
+                <div className="cert-card-facts">
+                  <span><CalendarBlank size={15} />{cert.data}</span>
+                  {cert.id !== 'cambridge' && (
+                    <span><Clock size={15} />{cert.cargaHoraria}</span>
+                  )}
+                </div>
               </div>
-
+      
               <div className="cert-card-actions">
                 <button 
                   onClick={() => openModal(cert)} 
@@ -783,8 +780,8 @@ export default function Portfolio() {
                   <span>Detalhes</span>
                 </button>
                 <a 
-                  href={cert.pdfUrl || '#contato'} 
-                  target={(cert.pdfUrl || '#contato').startsWith('http') || (cert.pdfUrl || '#contato').endsWith('.pdf') ? '_blank' : '_self'}
+                  href={cert.documentUrl}
+                  target="_blank"
                   rel="noreferrer"
                   className="btn-cert-pdf"
                 >
@@ -803,11 +800,11 @@ export default function Portfolio() {
       <section id="contato" className="section-block" style={{ marginBottom: '40px' }}>
         <div className="section-header-block">
           <div className="section-header-top">
-            <span className="section-eyebrow">07 // Conexão Direta</span>
+            <span className="section-eyebrow">07 // Contato</span>
             <div className="section-line-decor"></div>
           </div>
           <div className="section-header-main">
-            <h2 className="section-title-large">VAMOS CONVERSAR</h2>
+            <h2 className="section-title-large">CONEXÃO DIRETA</h2>
           </div>
         </div>
 
@@ -818,7 +815,6 @@ export default function Portfolio() {
           </p>
 
           <div className="contact-channel-section">
-            <span className="contact-group-label">Entre em contato:</span>
             <div className="contact-primary-actions">
               <button onClick={handleCopyEmail} className="btn-editorial primary">
                 {copiedEmail ? <CheckCircle size={20} /> : <EnvelopeSimple size={20} />}
@@ -832,27 +828,25 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="contact-divider">
-            <div className="contact-divider-line"></div>
-            <span className="contact-divider-text">minhas redes</span>
-            <div className="contact-divider-line"></div>
-          </div>
+          <div className="contact-social-block">
+            <div className="contact-divider">
+              <div className="contact-divider-line"></div>
+              <span className="contact-divider-text">minhas redes</span>
+              <div className="contact-divider-line"></div>
+            </div>
 
-          <div className="contact-social-actions">
-            <a href="https://linkedin.com/in/arthur-jacomel" target="_blank" rel="noreferrer" className="btn-editorial secondary social-btn" title="LinkedIn">
-              <LinkedinLogo size={18} />
-              <span>LinkedIn</span>
-            </a>
+            <div className="contact-social-actions">
+              <a href="https://linkedin.com/in/arthur-jacomel" target="_blank" rel="noreferrer" className="btn-editorial secondary social-btn" title="LinkedIn">
+                <LinkedinLogo size={18} />
+                <span>LinkedIn</span>
+              </a>
 
-            <a href="https://github.com/ArthurJKF" target="_blank" rel="noreferrer" className="btn-editorial secondary social-btn" title="GitHub">
-              <GithubLogo size={18} />
-              <span>GitHub</span>
-            </a>
+              <a href="https://github.com/ArthurJKF" target="_blank" rel="noreferrer" className="btn-editorial secondary social-btn" title="GitHub">
+                <GithubLogo size={18} />
+                <span>GitHub</span>
+              </a>
 
-            <a href="https://instagram.com/arthur.jkf" target="_blank" rel="noreferrer" className="btn-editorial secondary social-btn" title="Instagram">
-              <InstagramLogo size={18} />
-              <span>Instagram</span>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -877,22 +871,25 @@ export default function Portfolio() {
               <X size={18} weight="bold" />
             </button>
 
-            <span className="cert-modal-category">{activeCert.category}</span>
             <h3>{activeCert.title}</h3>
             <span className="cert-modal-sub">{activeCert.institution}</span>
 
             <div className="cert-modal-grid">
               <div className="cert-modal-field">
-                <span>Ano</span>
-                <strong>{activeCert.year}</strong>
+                <span>Período</span>
+                <strong>{activeCert.data}</strong>
               </div>
               <div className="cert-modal-field">
-                <span>Carga Horária</span>
+                <span>{activeCert.id === 'cambridge' ? 'Tipo' : 'Carga Horária'}</span>
                 <strong>{activeCert.cargaHoraria}</strong>
               </div>
-              <div className="cert-modal-field" style={{ gridColumn: '1 / -1' }}>
+              <div className="cert-modal-field">
                 <span>Categoria</span>
                 <strong>{activeCert.categoria}</strong>
+              </div>
+              <div className="cert-modal-field">
+                <span>Destaque</span>
+                <strong>{activeCert.destaque}</strong>
               </div>
             </div>
 
@@ -901,16 +898,16 @@ export default function Portfolio() {
               <p>{activeCert.competencias}</p>
             </div>
 
-            <a 
-              href={activeCert.pdfUrl || '#'} 
-              target={(activeCert.pdfUrl || '#').startsWith('http') || (activeCert.pdfUrl || '#').endsWith('.pdf') ? '_blank' : '_self'}
-              rel="noreferrer"
-              className="btn-editorial primary" 
-              style={{ display: 'inline-flex', gap: '10px' }}
-            >
-              <FileText size={18} />
-              <span>Abrir PDF do Certificado</span>
-            </a>
+            {activeCert.registro && (
+              <p className="cert-modal-record">{activeCert.registro}</p>
+            )}
+
+            <div className="cert-modal-actions">
+              <a href={activeCert.documentUrl} target="_blank" rel="noreferrer" className="btn-editorial primary">
+                <FileText size={18} />
+                <span>Abrir PDF</span>
+              </a>
+            </div>
           </div>
         </div>
       )}

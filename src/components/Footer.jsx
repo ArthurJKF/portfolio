@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { LinkedinLogo, InstagramLogo, WhatsappLogo, GithubLogo } from '@phosphor-icons/react'
+import { LinkedinLogo, WhatsappLogo, GithubLogo, EnvelopeSimple, Phone } from '@phosphor-icons/react'
 
 export default function Footer() {
   return (
@@ -22,6 +22,7 @@ export default function Footer() {
         <div className="footer-col-nav-compact">
           <div className="footer-pages-nav">
             <Link to="/" className="footer-page-link">Início</Link>
+            <span className="footer-nav-divider" aria-hidden="true" />
 
             <div className="footer-portfolio-hub">
               <Link to="/portfolio" className="footer-page-link">Portfólio Completo</Link>
@@ -29,14 +30,15 @@ export default function Footer() {
               <ul className="footer-sections-inline-grid">
                 <li><a href="/portfolio#sobre-mim">Sobre Mim</a></li>
                 <li><a href="/portfolio#formacao">Formação</a></li>
-                <li><a href="/portfolio#projetos">Aplicações</a></li>
-                <li><a href="/portfolio#stack">Stack</a></li>
-                <li><a href="/portfolio#certificados">Certificações</a></li>
                 <li><a href="/portfolio#trajetoria">Trajetória</a></li>
+                <li><a href="/portfolio#projetos">Projetos</a></li>
+                <li><a href="/portfolio#stack">Competências</a></li>
+                <li><a href="/portfolio#certificados">Certificados</a></li>
                 <li><a href="/portfolio#contato">Contato</a></li>
               </ul>
             </div>
 
+            <span className="footer-nav-divider" aria-hidden="true" />
             <Link to="/colecao" className="footer-page-link">Coleção de Criações</Link>
           </div>
         </div>
@@ -46,9 +48,11 @@ export default function Footer() {
           <h5 className="footer-col-title">Canais Oficiais</h5>
           <div className="footer-contact-data">
             <span className="contact-text-item">
+              <EnvelopeSimple size={16} weight="bold" aria-hidden="true" />
               arthurjac.kf@gmail.com
             </span>
             <span className="contact-text-item">
+              <Phone size={16} weight="bold" aria-hidden="true" />
               +55 (41) 99911-4699
             </span>
           </div>
@@ -66,9 +70,6 @@ export default function Footer() {
           </a>
           <a href="https://github.com/ArthurJKF" target="_blank" rel="noreferrer" title="GitHub">
             <GithubLogo size={26} />
-          </a>
-          <a href="https://instagram.com/arthur.jkf" target="_blank" rel="noreferrer" title="Instagram">
-            <InstagramLogo size={26} />
           </a>
           <a href="https://wa.me/41999114699" target="_blank" rel="noreferrer" title="WhatsApp">
             <WhatsappLogo size={26} />

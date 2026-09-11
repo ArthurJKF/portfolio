@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { LinkedinLogo, GithubLogo, InstagramLogo, WhatsappLogo } from '@phosphor-icons/react'
+import { LinkedinLogo, GithubLogo, WhatsappLogo } from '@phosphor-icons/react'
 
 export default function Home() {
   return (
@@ -37,9 +37,6 @@ export default function Home() {
           </a>
           <a href="https://github.com/ArthurJKF" target="_blank" rel="noreferrer" title="GitHub">
             <GithubLogo size={24} />
-          </a>
-          <a href="https://instagram.com/arthur.jkf" target="_blank" rel="noreferrer" title="Instagram">
-            <InstagramLogo size={24} />
           </a>
           <a href="https://wa.me/41999114699" target="_blank" rel="noreferrer" title="WhatsApp">
             <WhatsappLogo size={24} />

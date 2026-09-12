@@ -13,6 +13,7 @@ import {
   CheckCircle,
   Hourglass,
   X,
+  ArrowRight,
   ArrowUpRight
 } from '@phosphor-icons/react'
 
@@ -269,6 +270,25 @@ export default function Portfolio() {
                 <span>Hï Tech · Empresa Júnior</span>
               </div>
             </div>
+
+            <div className="about-action-row">
+              <a href="#projetos" className="about-action about-action-primary">
+                <ArrowRight size={17} weight="bold" />
+                <span>Ver projetos</span>
+              </a>
+              <a href="#contato" className="about-action about-action-primary about-action-contact">
+                <EnvelopeSimple size={17} weight="bold" />
+                <span>Entre em contato</span>
+              </a>
+              <a href="https://linkedin.com/in/arthur-jacomel" target="_blank" rel="noreferrer" className="about-action about-action-secondary" title="LinkedIn">
+                <LinkedinLogo size={17} weight="bold" />
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/ArthurJKF" target="_blank" rel="noreferrer" className="about-action about-action-secondary" title="GitHub">
+                <GithubLogo size={17} weight="bold" />
+                <span>GitHub</span>
+              </a>
+            </div>
           </div>
 
           <div className="about-pillars-stack">
@@ -315,6 +335,7 @@ export default function Portfolio() {
             </div>
 
           </div>
+
         </div>
       </section>
 
@@ -488,7 +509,7 @@ export default function Portfolio() {
           <div className="timeline-row">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
-              <span className="timeline-date">Jan/2023 — Mai/2024</span>
+              <span className="timeline-date">Jan/2023 — Jun/2024</span>
               <h3>Delegação SesiMUN & OxfordMUN</h3>
               <span className="timeline-location">Universidade de Oxford — Oxford, Inglaterra</span>
               <ul className="project-bullets-list">
@@ -511,7 +532,7 @@ export default function Portfolio() {
               <span className="timeline-photo-caption">[ Foto / Documento: Simulação e Rules of Procedure ]</span>
             </div>
             <div className="timeline-content">
-              <span className="timeline-date">2024</span>
+              <span className="timeline-date">Out/2024 </span>
               <h3>Criação e Execução de MUN Interna</h3>
               <span className="timeline-location">SESI Centro — Curitiba, PR</span>
               <ul className="project-bullets-list">

@@ -543,7 +543,7 @@ export default function Portfolio() {
               <span className="timeline-location">Curitiba Júnior 26.1 — AURORA: 700+ congressistas, 2 dias de evento, 12h cada dia</span>
               <ul className="project-bullets-list">
                 <li>Atuação no time de negócios na estruturação do evento. Fomos do zero à uma entrega inesquecível, em 2 meses.</li>
-                <li>Prospecção, estruturação e fechamento de contrato, relacionamento com patrocinadores e captação de recursos para o evento em 3 meses.</li>
+                <li>Prospecção, estruturação e fechamento de contrato, relacionamento com patrocinadores e captação de recursos para o evento.</li>
                 <li>Condução de momentos de construção e pautas, acompanhamento de palestrantes e parceiros, suporte e engajamento para os 700 congressistas e resolução de imprevistos ao vivo.</li>
               </ul>
             </div>

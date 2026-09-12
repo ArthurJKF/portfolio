@@ -693,7 +693,7 @@ body {
     grid-template-columns: minmax(130px, 1.35fr) minmax(150px, 1.5fr) auto auto;
     gap: 12px;
     align-items: stretch;
-    margin-top: 35px;
+    margin-top: 20px;
     padding-top: 30px;
     border-top: 1px solid var(--border-subtle);
 }
@@ -862,17 +862,25 @@ body {
 
 .meta-title-group h3 {
     font-family: var(--font-title);
-    font-size: clamp(1.55rem, 3vw, 2.1rem);
+    font-size: clamp(1.55rem, 2vw, 2.1rem);
     font-weight: 900;
     color: var(--paper-cream);
     line-height: 1.1;
     margin-bottom: 4px;
 }
 
+.meta-client-text {
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: var(--text-secondary);
+        line-height: 1.50;
+        margin-bottom: 12px;
+}
+
 .meta-client-tag {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: #cbd5e1;
     letter-spacing: 0.2px;
 }
@@ -890,6 +898,9 @@ body {
     border-radius: var(--radius-sm);
 }
 
+.card-status + .card-status {
+    margin-left: 8px;
+}
 .card-status.status-active {
     background: rgba(0, 94, 201, 0.2);
     color: #93c5fd;

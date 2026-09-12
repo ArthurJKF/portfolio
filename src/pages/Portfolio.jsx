@@ -20,7 +20,7 @@ import {
 const CAMBRIDGE_PDF_URL = '/certificados/cambridge-ket.pdf'
 
 // Link do post sobre a aprovação no LinkedIn
-const LINKEDIN_APROVACAO_POST_URL = 'https://www.linkedin.com/in/arthur-jacomel/'
+const LINKEDIN_APROVACAO_POST_URL = 'https://www.linkedin.com/posts/arthur-jacomel_enem-vestibular-utfpr-activity-7360908134489411584-wwHj?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFGvVEUB8UP02Wqp7Kthx3XJL5Bf_rCxnOs'
 
 const CERTS_DATA = [
   {
@@ -226,7 +226,7 @@ export default function Portfolio() {
     <main className="page-container">
       <header className="page-header">
         <h1 className="page-title">PORTFÓLIO</h1>
-        <p className="page-subtitle">Desenvolvimento de Software e Estratégia de Negócios</p>
+        <p className="page-subtitle">Projetos, Conquistas e Trajetória</p>
       </header>
 
       {/* ====================================================================
@@ -246,15 +246,17 @@ export default function Portfolio() {
         <div className="about-editorial-canvas">
           <div className="about-main-column">
             <div className="about-lead-quote">
-              Transformo problemas de negócio em produtos digitais claros, sustentáveis e possíveis de executar.
+              Apaixonado por tecnologias que transformam, movido pelas estratégias que as tornam possíveis. 
             </div>
 
             <div className="about-narrative">
               <p>
-                Uno engenharia e visão de negócio: desenvolvo interfaces reativas com React, Vite e TanStack Query, enquanto conduzo reuniões diagnósticas, propostas comerciais e decisões orientadas ao cliente.
+                Estudante de Sistemas de Informação na UTFPR e Gerente de Negócios da Hï Tech.
+                Possuo domínio em Java, Kotlin e Python, adquiridos em projetos pessoais e acadêmicos, além de constante prática com React em projetos da Hï Tech.
               </p>
               <p>
-                Meu foco é conectar execução técnica, clareza de produto e liderança colaborativa, com experiência em equipes multidisciplinares e na coordenação do Curitiba Júnior para 700 congressistas.
+                Confiante nas minhas habilidades de comunicação, relacionamento com clientes, planejamento estratégico e gestão de equipes, com experiências na
+                empresa júnior, na organização do maior evento de empresários jovens do Paraná (700 congressistas) e em debates de diplomacia internacional.
               </p>
             </div>
 
@@ -320,10 +322,9 @@ export default function Portfolio() {
                   <span>Conquista</span>
                 </span>
               </div>
-              <h3>Gabarito Completo — Exame Cambridge</h3>
+              <h3>Exame de Cambridge — Pontuação Máxima</h3>
               <ul className="project-bullets-list">
-                <li><strong>Pontuação máxima:</strong> 100% em <em>Speaking</em>, <em>Writing</em> e <em>Listening</em>.</li>
-                <li><strong>Aplicação:</strong> debates diplomáticos em Oxford e apresentações em inglês.</li>
+                <li><strong>100%</strong> em <em>Speaking</em>, <em>Writing</em> e <em>Listening</em> (e 1° a terminar ambas as etapas).</li>
               </ul>
               <div className="milestone-actions">
                 <a href={CAMBRIDGE_PDF_URL} target="_self" className="btn-milestone-action" title="Visualizar documento em PDF">
@@ -336,288 +337,6 @@ export default function Portfolio() {
 
           </div>
 
-        </div>
-      </section>
-
-      {/* ====================================================================
-          04 // PROJETOS
-          ==================================================================== */}
-      <section id="projetos" className="section-block">
-        <div className="section-header-block">
-          <div className="section-header-top">
-            <span className="section-eyebrow">04 // Projetos</span>
-            <div className="section-line-decor"></div>
-          </div>
-          <div className="section-header-main">
-            <h2 className="section-title-large">PRINCIPAIS PROJETOS</h2>
-          </div>
-        </div>
-        
-        {/* PROJETO 1: DESTAQUE MASTER (NDA) */}
-        <div className="project-spotlight-dossier">
-          <div className="project-dossier-meta-bar">
-            <div className="meta-title-group">
-              <h3>Sistema Web FrontEnd para Agro</h3>
-              <span className="meta-client-tag">Hï Tech — Projeto Comercial Corporativo</span>
-            </div>
-            <div>
-              <span className="card-status status-active">EM ANDAMENTO</span>
-            </div>
-          </div>
-
-          <div className="project-content-split">
-            <div>
-              <p className="project-lead-text">
-                Sistema corporativo de intermediação comercial e operacional entre produtores rurais, cooperativas e fornecedores de insumos agrícolas.
-              </p>
-
-              <ul className="project-bullets-list">
-                <li><strong>Maior contrato da EJ:</strong> Negociação e fechamento de R$ 22.000 liderados pela área de negócios com atuação direta no front-end.</li>
-                <li><strong>Complexidade de negócio:</strong> Modelagem de rateio dinâmico fracionado de grandes cargas de insumos entre produtores consorciados.</li>
-                <li><strong>Máquina de Estados Finitos (FSM):</strong> Fluxo estrito de aprovações com tratamento da exceção 409 para proteger demandas ativas.</li>
-                <li><strong>Performance & Cache:</strong> Invalidação seletiva e sincronização de dados assíncronos via TanStack Query.</li>
-              </ul>
-              
-              <ul className="tech-stack-inline">
-                <li>JavaScript (ES6+)</li>
-                <li>React + Vite</li>
-                <li>React Router</li>
-                <li>TanStack Query</li>
-                <li>Material UI (MUI)</li>
-                <li>FSM (State Machine)</li>
-              </ul>
-            </div>
-
-            <div className="project-architecture-mock">
-              <div className="mock-header">
-                <span className="mock-dot red"></span>
-                <span className="mock-dot yellow"></span>
-                <span className="mock-dot green"></span>
-                <span className="mock-title">Regras de Negócio • Core Engine</span>
-              </div>
-              <ul className="architecture-rules">
-                <li><span className="rule-key">MÓDULO:</span> Catálogo & Rateio Dinâmico</li>
-                <li><span className="rule-key">LÓGICA:</span> Particionamento fracionário por produtor</li>
-                <li>
-                  <span className="rule-key">WORKFLOW:</span>
-                  <code className="workflow-state">ABERTA &rarr; EM_COTACAO &rarr; FECHADA</code>
-                </li>
-                <li className="rule-error">
-                  <span className="rule-key">SAFETY:</span> Erro 409: Imutabilidade de cotação em curso
-                </li>
-                <li><span className="rule-key">CACHE:</span> Invalidação granular via TanStack Query</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* PROJETOS 2 E 3: GRID DUPLO */}
-        <div className="projects-grid-half">
-          
-          {/* PROJETO 2: RECIPIE */}
-          <div className="project-half-card recipe-project-card">
-            <div>
-              <div className="project-half-header">
-                <h3>Recipie</h3>
-                <span className="card-subtitle-plain">UTFPR — Análise e Projeto de Algoritmos</span>
-                <div className="card-status-row">
-                  <span className="card-status status-active">Em Estruturação</span>
-                </div>
-              </div>
-              
-              <p className="project-lead-text">
-                Solução móvel desenhada para combater o desperdício doméstico cruzando itens disponíveis com viabilidade imediata de receitas.
-              </p>
-
-              <ul className="project-bullets-list">
-                <li><strong>Motor de filtragem:</strong> Algoritmo que calcula a taxa de preparo com base em ingredientes em estoque vs. ingredientes faltantes.</li>
-                <li><strong>Persistência local:</strong> Estruturação com Room DB para funcionamento offline da despensa virtual.</li>
-                <li><strong>Liderança acadêmica:</strong> Coordenação de equipe com alinhamentos semanais e especificação de requisitos via UML.</li>
-              </ul>
-              
-              <ul className="tech-stack-inline">
-                <li>Kotlin</li>
-                <li>Jetpack Compose</li>
-                <li>Room DB</li>
-                <li>Retrofit + Coroutines</li>
-              </ul>
-            </div>
-
-          </div>
-
-          {/* PROJETO 3: O ORÁCULO */}
-          <div className="project-half-card oracle-project-card">
-            <div>
-              <div className="project-half-header">
-                <h3>Mathemagical Oracle — Assembly</h3>
-                <span className="card-subtitle-plain">UTFPR — Arquitetura de Computadores</span>
-                <div className="card-status-row">
-                  <span className="card-status status-active">Em Estruturação</span>
-                </div>
-              </div>
-              
-              <p className="project-lead-text">
-                Implementação de Busca Binária em Assembly x86 com controle de registradores para demonstração didática no MUTEC.
-              </p>
-
-              <ul className="project-bullets-list">
-                <li><strong>Otimização O(log n):</strong> Adivinhação de números de 0 a 1000 em no máximo 10 iterações com hardware real.</li>
-                <li><strong>I/O de baixo nível:</strong> Manipulação direta de registradores de CPU sem dependência de bibliotecas de alto nível.</li>
-                <li><strong>Destinação didática:</strong> Instalação programada em terminais de computador antigo no Museu da Tecnologia da UTFPR.</li>
-              </ul>
-              
-              <ul className="tech-stack-inline">
-                <li>Assembly x86</li>
-                <li>Busca Binária (O(log n))</li>
-                <li>Registradores CPU</li>
-                <li>Terminal I/O</li>
-              </ul>
-            </div>
-
-            <div className="oracle-visual-grid">
-              <div className="oracle-photo-slot">
-                <img src="/projetos/oraculo.png" alt="Projeto Mathemagical Oracle" />
-              </div>
-              <div className="oracle-terminal-wrap">
-                <span className="oracle-example-label">Exemplo raso em JavaScript</span>
-                <OracleTerminal />
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ====================================================================
-          03 // TRAJETÓRIA: NEGÓCIOS & LIDERANÇA
-          ==================================================================== */}
-      <section id="trajetoria" className="section-block">
-        <div className="section-header-block">
-          <div className="section-header-top">
-            <span className="section-eyebrow">03 // Linha do Tempo</span>
-            <div className="section-line-decor"></div>
-          </div>
-          <div className="section-header-main">
-            <h2 className="section-title-large">TRAJETÓRIA & LIDERANÇA</h2>
-          </div>
-        </div>
-
-        <div className="timeline-container">
-          <div className="timeline-line"></div>
-
-          {/* ITEM 1: OXFORD (Card na Esquerda, Foto na Direita) */}
-          <div className="timeline-row">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-date">Jan/2023 — Jun/2024</span>
-              <h3>Delegação SesiMUN & OxfordMUN</h3>
-              <span className="timeline-location">Universidade de Oxford — Oxford, Inglaterra</span>
-              <ul className="project-bullets-list">
-                <li>Representação oficial da Suécia no comitê DISEC (+200 delegados de múltiplos países).</li>
-                <li>Condução de discurso de abertura de 1,5 min inteiramente em inglês perante a assembleia geral.</li>
-                <li>Articulação de blocos diplomáticos e redação conjunta de resoluções internacionais.</li>
-              </ul>
-            </div>
-            <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Delegação OxfordMUN — Universidade de Oxford ]</span>
-            </div>
-          </div>
-
-          {/* ITEM 2: MUN INTERNA (Foto na Esquerda, Card na Direita) */}
-          <div className="timeline-row">
-            <div className="timeline-dot"></div>
-            <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto / Documento: Simulação e Rules of Procedure ]</span>
-            </div>
-            <div className="timeline-content">
-              <span className="timeline-date">Out/2024 </span>
-              <h3>Criação e Execução de MUN Interna</h3>
-              <span className="timeline-location">SESI Centro — Curitiba, PR</span>
-              <ul className="project-bullets-list">
-                <li>Iniciativa autônoma para transformar debates políticos desinteressados em simulação diplomática ativa.</li>
-                <li>Redação completa do documento de <em>Rules of Procedure</em> adaptado para a realidade da turma do técnico.</li>
-                <li>Mediação e facilitação dos debates e votações com engajamento total dos alunos.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* ITEM 3: TRAINEE HI TECH (Card na Esquerda, Foto na Direita) */}
-          <div className="timeline-row">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-date">Ago/2025 — Dez/2025</span>
-              <h3>Ingresso e Programa Trainee</h3>
-              <span className="timeline-location">Hï Tech — Empresa Júnior UTFPR</span>
-              <ul className="project-bullets-list">
-                <li>Aprovação no processo seletivo no primeiro período da graduação em Sistemas de Informação.</li>
-                <li>Rotação pelas diretorias de Gente & Gestão, Presidência, Vice-Presidência e Negócios.</li>
-                <li>Escolha estratégica pela área Comercial e de Vendas Consultivas de Software.</li>
-              </ul>
-            </div>
-            <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Time e Imersão na Empresa Júnior ]</span>
-            </div>
-          </div>
-
-          {/* ITEM 4: ASSESSOR DE NEGÓCIOS (Foto na Esquerda, Card na Direita) */}
-          <div className="timeline-row">
-            <div className="timeline-dot"></div>
-            <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Reuniões Diagnósticas e Fechamentos ]</span>
-            </div>
-            <div className="timeline-content">
-              <span className="timeline-date">Jan/2026 — Jul/2026</span>
-              <h3>Assessor de Negócios</h3>
-              <span className="timeline-location">Hï Tech — Empresa Júnior UTFPR</span>
-              <ul className="project-bullets-list">
-                <li>Prospecção ativa B2B, reuniões diagnósticas e levantamento de necessidades técnicas com clientes.</li>
-                <li>Estruturação e precificação de propostas comerciais de desenvolvimento web e mobile.</li>
-                <li>Realização de benchmarks estaduais com outras empresas juniores de tecnologia.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* ITEM 5: CURITIBA JÚNIOR (Card na Esquerda, Foto na Direita) */}
-          <div className="timeline-row">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-date">Mar/2026 — Mai/2026</span>
-              <h3>Organização do Curitiba Júnior 26.1</h3>
-              <span className="timeline-location">Comissão Organizadora Regional do MEJ</span>
-              <ul className="project-bullets-list">
-                <li>Atuação no time de negócios na estruturação do maior encontro de empresários juniores do Paraná.</li>
-                <li>Gestão de relacionamento com patrocinadores e captação de recursos corporativos em 3 meses.</li>
-                <li>Acompanhamento de palestrantes, suporte aos 700 congressistas e resolução de imprevistos ao vivo.</li>
-              </ul>
-            </div>
-            <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Curitiba Júnior 26.1 — 700 Congressistas ]</span>
-            </div>
-          </div>
-
-          {/* ITEM 6: GERÊNCIA DE NEGÓCIOS (Foto na Esquerda, Card na Direita) */}
-          <div className="timeline-row">
-            <div className="timeline-dot"></div>
-            <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Liderança Comercial e Squad Agro ]</span>
-            </div>
-            <div className="timeline-content">
-              <span className="timeline-date">Ago/2026 — Presente</span>
-              <h3>Gerente de Negócios</h3>
-              <span className="timeline-location">Hï Tech — Empresa Júnior UTFPR</span>
-              <ul className="project-bullets-list">
-                <li>Aprovado em edital de liderança para ser o elo estratégico entre a diretoria e os assessores.</li>
-                <li>Liderança no fechamento do maior contrato da história da EJ (R$ 22.000 para o Agronegócio).</li>
-                <li>Atuação com dupla responsabilidade: gestão comercial do cliente e desenvolvimento no front-end.</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -649,9 +368,11 @@ export default function Portfolio() {
               <span className="formation-inst-label">Universidade Tecnológica Federal do Paraná (UTFPR) — Curitiba</span>
             </div>
             <ul className="formation-bullets">
-              <li><strong>Engenharia de software:</strong> estruturas de dados, algoritmos e análise de complexidade.</li>
-              <li><strong>Programação:</strong> C, Java, orientação a objetos, concorrência e tratamento de exceções.</li>
-              <li><strong>Sistemas:</strong> arquitetura de computadores, Assembly e fundamentos de hardware.</li>
+              <li><strong>Base técnica:</strong> Java, C, Estruturas de Dados, Programação Orientada a Objetos (POO), threads e paralelismo, tratamento de exceções.</li>
+              <li><strong>Base matemática:</strong> Álgebra Linear, Matemática Discreta, Cálculo, Estatística e Lógica Computacional.</li>
+              <li><strong>Análise e Projeto de Algoritmos:</strong> Levantamento de requisitos, Diagramação UML, prática em desenvolvimento de projeto (Kotlin, Jetpack Compose).</li>
+              <li><strong>Sistemas:</strong> Arquitetura de Computadores, Assembly e Arduíno.</li>
+              <li><strong>Estratégia e administração:</strong> TI com papel estratégico, empreendedorismo e administração.</li>
             </ul>
           </div>
 
@@ -667,10 +388,13 @@ export default function Portfolio() {
               <h3>Técnico em Cooperativismo</h3>
               <span className="formation-inst-label">SENAI Paraná — Curitiba</span>
             </div>
+            <p>
+              Técnico em Administração com ênfase em Cooperativismo
+            </p>
             <ul className="formation-bullets">
-              <li><strong>Gestão:</strong> Scrum, Kanban, liderança colaborativa e organização de projetos.</li>
-              <li><strong>Negócios:</strong> contabilidade gerencial, recursos humanos e processos cooperativos.</li>
-              <li><strong>Aplicação:</strong> experiência prática em planejamento, comunicação e tomada de decisão.</li>
+              <li><strong>Metodologias ágeis:</strong> Scrum, Kanban, organização de projetos.</li>
+              <li><strong>Gestão:</strong> Contabilidade, recursos humanos e processos organizacionais.</li>
+              <li><strong>Projetos e seminários:</strong> Planejamento, comunicação e tomada de decisão.</li>
             </ul>
           </div>
 
@@ -687,11 +411,306 @@ export default function Portfolio() {
               <span className="formation-inst-label">SESI Centro — Curitiba</span>
             </div>
             <ul className="formation-bullets">
-              <li><strong>Aprendizagem:</strong> projetos baseados em problemas e colaboração multidisciplinar.</li>
-              <li><strong>Comunicação:</strong> apresentações, seminários e participação em mostras científicas.</li>
-              <li><strong>Iniciativa:</strong> atuação em clubes de redação, investimentos, cinema e jornal.</li>
+              <li><strong>Trabalho em equipe e comunicação:</strong> Metodologia totalmente baseada em grupos — projetos, feiras, trabalhos, entrevistas e estudos.</li>
+              <li><strong>Extracurricular:</strong> Grupo de diplomacia internacional (SesiMUN) e clubes investimentos, jornal, e redação e cinema.</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          03 // TRAJETÓRIA: NEGÓCIOS & LIDERANÇA
+          ==================================================================== */}
+      <section id="trajetoria" className="section-block">
+        <div className="section-header-block">
+          <div className="section-header-top">
+            <span className="section-eyebrow">03 // Linha do Tempo</span>
+            <div className="section-line-decor"></div>
+          </div>
+          <div className="section-header-main">
+            <h2 className="section-title-large">TRAJETÓRIA & LIDERANÇA</h2>
+          </div>
+        </div>
+
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
+
+          {/* ITEM 1: SESI MUN*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <span className="timeline-date">Jan/2023 — Jun/2024</span>
+              <h3>Delegação SesiMUN — Model United Nations</h3>
+              <span className="timeline-location">SESI Centro — Curitiba, PR</span>
+              <ul className="project-bullets-list">
+                <li>Debates, treinamentos, pesquisas e estudos sobre geopolítica e diplomacia internacional em inglês.</li>
+                <li>Participação como delegado em comitês de MUNs nacionais e internacionais.</li>
+                <li>Discursos, negociações, estratégia, trabalho em equipe e escrita de documentos de proposta, apresentação e resolução.</li>
+              </ul>
+            </div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto: Delegação OxfordMUN — Universidade de Oxford ]</span>
+            </div>
+          </div>
+
+          {/* ITEM 2: OXFORD GLOBAL MUN*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto: Delegação OxfordMUN — Universidade de Oxford ]</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">Out/2023 — Nov/2024</span>
+              <h3>Oxford Global MUN</h3>
+              <span className="timeline-location">Universidade de Oxford — Oxford, Inglaterra</span>
+              <ul className="project-bullets-list">
+                <li>Atuação como delegado da Suécia no comitê DISEC (+200 delegados) na Model UN da Universidade de Oxford, na Inglaterra.</li>
+                <li>Condução de discursos perante abertura, assembleias gerais e votações.</li>
+                <li>Articulação de blocos diplomáticos, resolução de conflitos sob pressão e redação conjunta de resoluções internacionais.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ITEM 3: MUN INTERNA*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <span className="timeline-date">Out/2024 </span>
+              <h3>Criação e Execução de MUN Interna para a sala de aula</h3>
+              <span className="timeline-location">SESI Centro — Curitiba, PR</span>
+              <ul className="project-bullets-list">
+                <li>Iniciativa para ajudar a professora do curso técnico a engajar a turma em debates políticos,
+                  criando uma MUN adaptada para a realidade da sala de aula e dos critérios da professora.</li>
+                <li>Criação de do documento de <em>Guia do Congressista e Rules of Procedure</em>, descomplicando temas para os alunos e explicando como a sessão funcionaria.</li>
+                <li>Mediação e facilitação dos debates e votações dos alunos enquanto delegados. "Chair".</li>
+              </ul>
+            </div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto / Documento: Simulação e Rules of Procedure ]</span>
+            </div>
+          </div>
+
+          {/* ITEM 4: TRAINEE HI TECH*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto: Time e Imersão na Empresa Júnior ]</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">Ago/2025 — Dez/2025</span>
+              <h3>Ingresso como Trainee</h3>
+              <span className="timeline-location">Hï Tech — Empresa Júnior de Tecnologia da UTFPR</span>
+              <ul className="project-bullets-list">
+                <li>Aprovação no processo seletivo no primeiro período da faculdade.</li>
+                <li>Rotação pelas áreas de Gente & Gestão, Presidência, Vice-Presidência e Negócios.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ITEM 5: ASSESSOR DE NEGÓCIOS*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <span className="timeline-date">Jan/2026 — Jul/2026</span>
+              <h3>Assessor de Negócios</h3>
+              <span className="timeline-location">Hï Tech — Empresa Júnior de Tecnologia da UTFPR</span>
+              <ul className="project-bullets-list">
+                <li>Prospecção ativa, reuniões diagnósticas, levantamento de requisitos com clientes, apresentação de propostas, fechamento de contrato e pós venda.</li>
+                <li>Momentos de construção, treinamentos e realização de benchmarks com empresas juniores e sêniores de todo o Brasil.</li>
+                <li>Destaque em estruturação de processos internos.</li>
+              </ul>
+            </div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto: Reuniões Diagnósticas e Fechamentos ]</span>
+            </div>
+          </div>
+
+          {/* ITEM 6: CURITIBA JÚNIOR*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto: Curitiba Júnior 26.1 — 700 Congressistas ]</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">Mar/2026 — Mai/2026</span>
+              <h3>Organização do maior encontro de empresários juniores do estado</h3>
+              <span className="timeline-location">Curitiba Júnior 26.1 — AURORA: 700+ congressistas, 2 dias de evento, 12h cada dia</span>
+              <ul className="project-bullets-list">
+                <li>Atuação no time de negócios na estruturação do evento. Fomos do zero à uma entrega inesquecível, em 2 meses.</li>
+                <li>Prospecção, estruturação e fechamento de contrato, relacionamento com patrocinadores e captação de recursos para o evento em 3 meses.</li>
+                <li>Condução de momentos de construção e pautas, acompanhamento de palestrantes e parceiros, suporte e engajamento para os 700 congressistas e resolução de imprevistos ao vivo.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ITEM 7: GERÊNCIA DE NEGÓCIOS*/}
+          <div className="timeline-row">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <span className="timeline-date">Ago/2026 — Presente</span>
+              <h3>Gerente de Negócios</h3>
+              <span className="timeline-location">Hï Tech — Empresa Júnior de Tecnologia da UTFPR</span>
+              <ul className="project-bullets-list">
+                <li>Função de ser o elo estratégico entre a diretoria e os assessores da área.</li>
+                <li>Planejamento estratégico, gestão de equipe e estruturação de processos internos e materiais para o time.</li>
+                <li>Função estratégica, mas ainda atuando no operacional (orçamento e estruturação de propostas, relacionamento com clientes, fechamento de contratos).</li>
+              </ul>
+            </div>
+            <div className="timeline-photo-outer">
+              <ImageIcon size={32} />
+              <span className="timeline-photo-caption">[ Foto: Liderança Comercial e Squad Agro ]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          04 // PROJETOS
+          ==================================================================== */}
+      <section id="projetos" className="section-block">
+        <div className="section-header-block">
+          <div className="section-header-top">
+            <span className="section-eyebrow">04 // Projetos</span>
+            <div className="section-line-decor"></div>
+          </div>
+          <div className="section-header-main">
+            <h2 className="section-title-large">PRINCIPAIS PROJETOS</h2>
+          </div>
+        </div>
+        
+        {/* PROJETO 1: DESTAQUE MASTER (NDA) */}
+        <div className="project-spotlight-dossier">
+          <div className="project-dossier-meta-bar">
+            <div className="meta-title-group">
+              <h3>Sistema Web FrontEnd para Agro</h3>
+              <span className="meta-client-tag">Hï Tech — Projeto Comercial Corporativo</span>
+            </div>
+            <div>
+              <span className="card-status status-active">*CONFIDENCIAL</span>
+              <span className="card-status status-active">EM ANDAMENTO</span>
+            </div>
+          </div>
+
+          <div className="project-content-split">
+            <div style={{ width: '100%' }}>
+              <p className="project-lead-text">
+                Sistema corporativo de intermediação comercial e operacional entre produtores rurais, cooperativas e fornecedores de insumos agrícolas.
+              </p>
+
+              <p className="meta-client-text">
+                <strong>Maior projeto já fechado pela EJ.</strong> Envolve Banco de Dados, <strong>Web</strong> e Mobile.
+                Estou no time de devs da parte web do projeto, responsável pela <strong>criação das telas</strong> e <strong>conexão com o banco de dados</strong> desenvolvido pelo time de backend.
+              </p>
+              
+              <ul className="tech-stack-inline">
+                <li>JavaScript</li>
+                <li>React + Vite</li>
+                <li>React Router</li>
+                <li>TanStack Query</li>
+                <li>FSM (State Machine)</li>
+              </ul>
+            </div>
+            <div className="agro-photo-stock">
+              <img 
+                src="/projetos/dbml projeto.png" 
+                class="agro-photo" 
+                alt="Diagrama DBML do projeto" 
+                style={{ 
+                  width: '100%', 
+                  maxHeight: '320px', /* <-- É ISSO QUE VAI ENCOLHER O CARD */
+                  objectFit: 'cover',
+                  objectPosition: 'top', /* Foca na parte de cima do diagrama se ele for cortado */
+                  borderRadius: '8px', 
+                  display: 'block',
+                  marginLeft: 'auto'
+                }}
+              />
+            </div>
+
+          </div>
+        </div>
+
+        {/* PROJETOS 2 E 3: GRID DUPLO */}
+        <div className="projects-grid-half">
+          
+          {/* PROJETO 2: RECIPIE */}
+          <div className="project-half-card recipe-project-card">
+            <div>
+              <div className="project-half-header">
+                <h3>Recipie</h3>
+                <span className="card-subtitle-plain">UTFPR — Análise e Projeto de Algoritmos</span>
+                <div className="card-status-row">
+                  <span className="card-status status-active">Em Estruturação</span>
+                </div>
+              </div>
+              
+              <p className="project-lead-text">
+                App mobile pensado para reduzir atritos na hora de se preparar para cozinhar
+              </p>
+
+              <ul className="project-bullets-list">
+                <li><strong>Motor de filtragem:</strong> Algoritmo que calcula a taxa de preparo com base em ingredientes em estoque vs. ingredientes faltantes,
+                mostra as receitas que já podem ser feitas e as que quase podem ser feitas.</li>
+                <li><strong>Persistência local:</strong> Estruturação com Room DB para funcionamento offline da despensa virtual.</li>
+                <li><strong>Planejamento e análise:</strong> Ciclo de levantamento de requisitos, análise, desenvolvimento e testagem baseado no modelo Processo Unificado.</li>
+                <li><strong>Gestão da equipe:</strong> Organização dos encontros de alinhamento semanais.</li>
+              </ul>
+              
+              <ul className="tech-stack-inline">
+                <li>Kotlin</li>
+                <li>Jetpack Compose</li>
+                <li>Room DB</li>
+                <li>Retrofit + Coroutines</li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* PROJETO 3: O ORÁCULO */}
+          <div className="project-half-card oracle-project-card">
+            <div>
+              <div className="project-half-header">
+                <h3>Mathemagical Oracle — Assembly</h3>
+                <span className="card-subtitle-plain">UTFPR — Arquitetura de Computadores</span>
+                <div className="card-status-row">
+                  <span className="card-status status-active">Em Estruturação</span>
+                </div>
+              </div>
+              
+              <p className="project-lead-text">
+                Implementação de Busca Binária em Assembly com controle de registradores, para exposição didática no MUTEC.
+              </p>
+
+              <ul className="project-bullets-list">
+                <li><strong>Otimização O(log n):</strong> Adivinhação de números de 0 a 1000 em no máximo 10 iterações.</li>
+                <li><strong>I/O de baixo nível:</strong> Manipulação direta de registradores de CPU sem dependência de bibliotecas de alto nível.</li>
+                <li><strong>Destinação didática:</strong> Futura exposição didática em terminal de computador antigo no Museu da Tecnologia (MUTEC) da UTFPR.</li>
+              </ul>
+              
+              <ul className="tech-stack-inline">
+                <li>Assembly x86</li>
+                <li>Busca Binária (O(log n))</li>
+                <li>Registradores CPU</li>
+              </ul>
+            </div>
+
+            <div className="oracle-visual-grid">
+              <div className="oracle-photo-slot">
+                <img src="/projetos/oraculo.png" alt="Projeto Mathemagical Oracle" />
+              </div>
+              <div className="oracle-terminal-wrap">
+                <span className="oracle-example-label">Exemplo raso em JavaScript</span>
+                <OracleTerminal />
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

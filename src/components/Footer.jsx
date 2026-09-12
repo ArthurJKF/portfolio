@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="footer-col-bio">
           <h4>ARTHUR JACOMEL</h4>
           <p>
-            Desenvolvedor Front-End & Gerente de Negócios na Hï Tech. 
-            Conectando arquitetura técnica sustentável, viabilidade de mercado e liderança ágil.
+            Desenvolvedor & Gerente de Negócios na Hï Tech. 
+            Conectando tecnologia e visão de negócios.
           </p>
           <span className="footer-location">
             Curitiba, Paraná • Brasil

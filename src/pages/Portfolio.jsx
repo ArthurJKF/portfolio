@@ -832,7 +832,7 @@ export default function Portfolio() {
         <div className="contact-hero-card">
           <h3>Vamos construir algo com propósito</h3>
           <p className="contact-lead-sub">
-            Conectando arquitetura técnica, viabilidade de mercado e liderança ágil.
+            Conectando tecnologia e visão de negócios.
           </p>
 
           <div className="contact-channel-section">

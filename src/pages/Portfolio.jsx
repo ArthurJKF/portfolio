@@ -251,7 +251,7 @@ export default function Portfolio() {
             <div className="about-narrative">
               <p>
                 Estudante de Sistemas de Informação na UTFPR e Gerente de Negócios da Hï Tech.
-                Possuo domínio em Java, Kotlin e Python, adquiridos em projetos pessoais e acadêmicos, além de constante prática com React em projetos da Hï Tech.
+                Possuo domínio em Java, Python e C adquiridos em projetos pessoais e acadêmicos, além de constante prática com React em projetos da Hï Tech.
               </p>
               <p>
                 Confiante nas minhas habilidades de comunicação, relacionamento com clientes, planejamento estratégico e gestão de equipes, com experiências na

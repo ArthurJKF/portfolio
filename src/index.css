@@ -12,7 +12,6 @@
     --blue-cobalt: #005ec9;
     --blue-electric: #1e6beb;
     --blue-accent: #60a5fa;
-    /* Substituído o ciano por azul cobalto suave */
 
     --paper-cream: #f4f4ee;
     --paper-card: #eae9e1;
@@ -2004,6 +2003,8 @@ body {
     position: relative;
     animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+
 
 @keyframes fadeIn {
     from {

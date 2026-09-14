@@ -62,7 +62,7 @@ export default function Footer() {
 
       {/* Barra Inferior: Direitos e Dock com Ícones Originais */}
       <div className="footer-bottom-bar">
-        <span>© 2026 ARTHUR JACOMEL • ENGENHARIA DE SOFTWARE & GESTÃO</span>
+        <span>© 2026 ARTHUR JACOMEL • DESENVOLVIMENTO DE SOFTWARE & ESTRATÉGIA DE NEGÓCIOS</span>
 
         <div className="footer-social-dock">
           <a href="https://linkedin.com/in/arthur-jacomel" target="_blank" rel="noreferrer" title="LinkedIn">

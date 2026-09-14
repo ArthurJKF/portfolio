@@ -1624,8 +1624,68 @@ body {
     transform: translateY(-2px);
 }
 
-.timeline-photo-outer svg {
-    color: #60a5fa;
+/* Estilo base para todas as fotos da linha do tempo */
+.timeline-photo-img {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* CONTAINER DO DOCUMENTO CLICÁVEL */
+.document-thumbnail-link {
+  position: relative;
+  display: block;
+  width: 100%; /* Força a esticar até o limite do card */
+  height: 250px; /* Altura padrão para igualar aos outros cards */
+  border-radius: 8px;
+  overflow: hidden; /* Isso garante que o que passar do tamanho será cortado */
+  text-decoration: none;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.document-thumbnail-link:hover {
+  border-color: #3b82f6; /* Cor azul neon ou a cor primária do seu site */
+  transform: translateY(-4px); /* Levanta o card levemente */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* IMAGEM DE FUNDO DO DOCUMENTO */
+.document-thumbnail-link .document-img {
+  border: none;
+  opacity: 0.4; /* Deixa a imagem escura para o texto brilhar */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.document-thumbnail-link:hover .document-img {
+  opacity: 0.2; /* Escurece mais ainda no hover */
+  transform: scale(1.05); /* Dá um leve zoom na imagem */
+}
+
+/* TEXTO E ÍCONE SOBREPOSTOS */
+.document-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #ffffff;
+  z-index: 2;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .timeline-photo-caption {

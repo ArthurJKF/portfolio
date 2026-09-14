@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   FileText,
-  Image as ImageIcon,
   Certificate,
   CalendarBlank,
   Clock,
@@ -435,7 +434,7 @@ export default function Portfolio() {
         <div className="timeline-container">
           <div className="timeline-line"></div>
 
-          {/* ITEM 1: SESI MUN*/}
+          {/* ITEM 1: SESIMUN*/}
           <div className="timeline-row">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
@@ -449,8 +448,11 @@ export default function Portfolio() {
               </ul>
             </div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Delegação OxfordMUN — Universidade de Oxford ]</span>
+              <img
+                src="/trajetoria/sesimun.jpeg" 
+                alt="Delegação OxfordMUN" 
+                className="timeline-photo-img"
+              />
             </div>
           </div>
 
@@ -458,8 +460,11 @@ export default function Portfolio() {
           <div className="timeline-row">
             <div className="timeline-dot"></div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Delegação OxfordMUN — Universidade de Oxford ]</span>
+              <img
+                src="/trajetoria/oxford.jpeg" 
+                alt="Delegação OxfordMUN" 
+                className="timeline-photo-img"
+              />
             </div>
             <div className="timeline-content">
               <span className="timeline-date">Out/2023 — Nov/2024</span>
@@ -481,15 +486,30 @@ export default function Portfolio() {
               <h3>Criação e Execução de MUN Interna para a sala de aula</h3>
               <span className="timeline-location">SESI Centro — Curitiba, PR</span>
               <ul className="project-bullets-list">
-                <li>Iniciativa para ajudar a professora do curso técnico a engajar a turma em debates políticos,
-                  criando uma MUN adaptada para a realidade da sala de aula e dos critérios da professora.</li>
-                <li>Criação de do documento de <em>Guia do Congressista e Rules of Procedure</em>, descomplicando temas para os alunos e explicando como a sessão funcionaria.</li>
+                <li>Iniciativa para ajudar a professora do curso técnico a engajar a turma em debates políticos, criando uma MUN adaptada para a realidade da sala de aula e dos critérios da professora.</li>
+                <li>Criação de do documento de <em>Guia de Preparação do Delegado</em>, descomplicando temas para os alunos e explicando como a sessão funcionaria.</li>
                 <li>Mediação e facilitação dos debates e votações dos alunos enquanto delegados. "Chair".</li>
               </ul>
             </div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto / Documento: Simulação e Rules of Procedure ]</span>
+              {/* NOVO CÓDIGO DO ARQUIVO CLICÁVEL AQUI */}
+              <a 
+                href="/trajetoria/coopmun-guia.pdf" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="document-thumbnail-link"
+              >
+                <div className="document-overlay">
+                  <FileText size={40} weight="duotone" />
+                  <span>Abrir PDF</span>
+                </div>
+                <img 
+                  src="/trajetoria/coopmun-capa.png" 
+                  alt="COOPMUN - Guia de Preparação do Delegado" 
+                  className="timeline-photo-img document-img" 
+                  style={{ objectPosition: '50% 40%' }}
+                />
+              </a>
             </div>
           </div>
 
@@ -497,15 +517,19 @@ export default function Portfolio() {
           <div className="timeline-row">
             <div className="timeline-dot"></div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Time e Imersão na Empresa Júnior ]</span>
+              <img
+                src="/trajetoria/trainee.jpeg" 
+                alt="Delegação OxfordMUN" 
+                className="timeline-photo-img"
+                style={{ objectPosition: '50% 30%' }}
+              />
             </div>
             <div className="timeline-content">
               <span className="timeline-date">Ago/2025 — Dez/2025</span>
               <h3>Ingresso como Trainee</h3>
               <span className="timeline-location">Hï Tech — Empresa Júnior de Tecnologia da UTFPR</span>
               <ul className="project-bullets-list">
-                <li>Aprovação no processo seletivo no primeiro período da faculdade.</li>
+                <li>No 1° período, passei no processo seletivo.</li>
                 <li>Rotação pelas áreas de Gente & Gestão, Presidência, Vice-Presidência e Negócios.</li>
               </ul>
             </div>
@@ -525,8 +549,12 @@ export default function Portfolio() {
               </ul>
             </div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Reuniões Diagnósticas e Fechamentos ]</span>
+              <img
+                src="/trajetoria/assessor.jpeg" 
+                alt="Delegação OxfordMUN" 
+                className="timeline-photo-img"
+                style={{ objectPosition: '50% 30%' }}
+              />
             </div>
           </div>
 
@@ -534,8 +562,11 @@ export default function Portfolio() {
           <div className="timeline-row">
             <div className="timeline-dot"></div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Curitiba Júnior 26.1 — 700 Congressistas ]</span>
+              <img
+                src="/trajetoria/aurora.jpeg" 
+                alt="Delegação OxfordMUN" 
+                className="timeline-photo-img"
+              />
             </div>
             <div className="timeline-content">
               <span className="timeline-date">Mar/2026 — Mai/2026</span>
@@ -563,8 +594,15 @@ export default function Portfolio() {
               </ul>
             </div>
             <div className="timeline-photo-outer">
-              <ImageIcon size={32} />
-              <span className="timeline-photo-caption">[ Foto: Liderança Comercial e Squad Agro ]</span>
+              <img
+                src="/trajetoria/gerente.png" 
+                alt="Delegação OxfordMUN" 
+                className="timeline-photo-img"
+                style={{
+                  objectPosition: '50% 54%',
+                  maxHeight: '300px'
+                }}
+              />
             </div>
           </div>
         </div>

@@ -26,10 +26,10 @@ const CERTS_DATA = [
     id: 'cambridge',
     category: 'Inglês',
     year: '2021',
-    title: 'Key English Test (KET)',
+    title: 'Cambridge Key English Test',
     institution: 'Cambridge Assessment English',
     cargaHoraria: 'Exame oficial',
-    categoria: 'Proficiência Internacional',
+    categoria: 'Inglês',
     competencias: 'Certificação Cambridge English Entry Level Certificate in ESOL International (Entry 3), com Grade A, nível B1 e pontuação 150.',
     destaque: 'Grade A · B1 · Score 150',
     data: '23 de outubro de 2021',
@@ -37,7 +37,7 @@ const CERTS_DATA = [
   },
   {
     id: 'python',
-    category: 'Programação',
+    category: 'Python',
     year: '2025',
     title: 'Programação em Python',
     institution: 'SENAI - Dr. Celso Charuri',
@@ -79,7 +79,7 @@ const CERTS_DATA = [
   },
   {
     id: 'excel',
-    category: 'Gestão & Dados',
+    category: 'Excel',
     year: '2025',
     title: 'Excel Básico ao Intermediário',
     institution: 'SENAI - Dr. Celso Charuri',
@@ -369,7 +369,7 @@ export default function Portfolio() {
             <ul className="formation-bullets">
               <li><strong>Base técnica:</strong> Java, C, Estruturas de Dados, Programação Orientada a Objetos (POO), threads e paralelismo, tratamento de exceções.</li>
               <li><strong>Base matemática:</strong> Álgebra Linear, Matemática Discreta, Cálculo, Estatística e Lógica Computacional.</li>
-              <li><strong>Análise e Projeto de Algoritmos:</strong> Levantamento de requisitos, Diagramação UML, prática em desenvolvimento de projeto (Kotlin, Jetpack Compose).</li>
+              <li><strong>Análise e Projeto de Sistemas:</strong> Levantamento de requisitos, Diagramação UML, prática em desenvolvimento de projeto (Kotlin, Jetpack Compose).</li>
               <li><strong>Sistemas:</strong> Arquitetura de Computadores, Assembly e Arduíno.</li>
               <li><strong>Estratégia e administração:</strong> TI com papel estratégico, empreendedorismo e administração.</li>
             </ul>

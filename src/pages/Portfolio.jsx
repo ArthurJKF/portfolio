@@ -303,7 +303,7 @@ export default function Portfolio() {
               <h3>1º Lugar PUCPR & Ingresso na UTFPR</h3>
               <ul className="project-bullets-list">
                 <li><strong>1º Lugar em Engenharia de Software</strong> no vestibular da PUCPR.</li>
-                <li><strong>1° aluno da turma</strong> a conquistar vaga em universidade federal concorrida, com a nota do próprio terceirão. <strong>Sem cursinho.</strong></li>
+                <li>Aprovação em curso concorrido de universidade federal com a nota do terceirão, <strong>sem cursinho</strong>.</li>
               </ul>
               <div className="milestone-actions">
                 <a href={LINKEDIN_APROVACAO_POST_URL} target="_blank" rel="noreferrer" className="btn-milestone-action btn-milestone-primary" title="Acessar publicação no LinkedIn">
@@ -323,7 +323,7 @@ export default function Portfolio() {
               </div>
               <h3>Exame de Cambridge — Pontuação Máxima</h3>
               <ul className="project-bullets-list">
-                <li><strong>100%</strong> em <em>Speaking</em>, <em>Writing</em> e <em>Listening</em> (e 1° a terminar ambas as etapas).</li>
+                <li><strong>100%</strong> nas três competências: <em>Speaking</em>, <em>Writing</em> e <em>Listening.</em></li>
               </ul>
               <div className="milestone-actions">
                 <a href={CAMBRIDGE_PDF_URL} target="_self" className="btn-milestone-action" title="Visualizar documento em PDF">

@@ -647,7 +647,7 @@ export default function Portfolio() {
               </p>
               
               <ul className="tech-stack-inline">
-                <li>JavaScript</li>
+                <li>TypeScript</li>
                 <li>React + Vite</li>
                 <li>React Router</li>
                 <li>TanStack Query</li>
@@ -776,12 +776,14 @@ export default function Portfolio() {
               <span className="stack-badge-pro">Java</span>
               <span className="stack-badge-pro">Python</span>
               <span className="stack-badge-pro">C</span>
+              <span className="stack-badge-pro">C++</span>
               <span className="stack-badge-pro">Kotlin</span>
               <span className="stack-badge-pro">Assembly</span>
-              <span className="stack-badge-pro">React</span>
+              <span className="stack-badge-pro">TypeScript</span>
+              <span className="stack-badge-pro">JavaScript</span>
               <span className="stack-badge-pro">CSS</span>
               <span className="stack-badge-pro">HTML</span>
-              <span className="stack-badge-pro">JavaScript</span>
+              <span className="stack-badge-pro">React</span>
             </div>
           </div>
           
@@ -807,9 +809,8 @@ export default function Portfolio() {
             </div>
             <div className="stack-badges-wrap">
               <span className="stack-badge-pro">Git</span>
-              <span className="stack-badge-pro">GitHub (Prototipagem)</span>
-              <span className="stack-badge-pro">WSL</span>
-              <span className="stack-badge-pro">Linux</span>
+              <span className="stack-badge-pro">GitHub</span>
+              <span className="stack-badge-pro">WSL/Linux</span>
               <span className="stack-badge-pro">VS Code</span>
             </div>
           </div>
